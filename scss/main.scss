@@ -1,0 +1,72 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+@import "_reset.scss";
+
+html, body {
+    height: 100%;
+}
+
+
+/*=============================================
+=            HEADER            =
+=============================================*/
+
+.header {
+    height: 100%;
+    background: $header-image;
+    background-size: cover;
+    text-align: center;
+
+    /*----------  Navigation  ----------*/
+    
+    &__nav {
+        max-width: 800px;
+        min-width: 800px;
+        margin-top: 73px;
+        @include flexbox-inline;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 35px;
+    }
+    
+    &__list {
+        @include flexbox-inline;
+    }
+
+    &__item {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        position: relative;
+
+        &--longer {
+           margin-right: 120px;
+        }
+
+        &:nth-child(even):before {
+            content: " ";
+            width: 2px;
+            height: 2px;
+            background-color: #000;
+            position: relative;
+            left: -50px;
+            top: 10px;
+            
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-family: $main-font;
+        color: $menu-font-color;
+
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
+/*=====  End of HEADER  ======*/

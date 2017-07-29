@@ -1,0 +1,5 @@
+@mixin flexbox-inline {
+    display: inline-flex;
+    flex: 1;
+    justify-content: center;
+}
