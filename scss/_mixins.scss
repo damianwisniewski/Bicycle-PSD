@@ -3,3 +3,29 @@
     flex: 1;
     justify-content: center;
 }
+
+@mixin article-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin paragraph-style {
+    color: $content-font-color;
+    font-size: 1em;
+    line-height: 1.8;
+}
+
+@mixin h2-style {
+    text-transform: uppercase;
+    color: $header-font-color;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 1.5%;
+}
+
+@mixin bg-image($image) {
+    background: url(../img/images/#{$image}.jpg) no-repeat center;
+    background-size: cover; 
+}
