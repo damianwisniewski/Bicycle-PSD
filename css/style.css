@@ -290,3 +290,119 @@ html, body {
 }
 
 /*=====  End of SHOP  ======*/
+/*=============================================
+=                 ENTER SHOP                  =
+=============================================*/
+.enter {
+  display: flex;
+  width: 100%;
+  background-color: #282f35;
+}
+.enter__btn {
+  margin: 4% auto;
+  width: 250px;
+  background-color: transparent;
+  border: 1px solid #94979a;
+  padding: 0;
+}
+.enter__link {
+  display: flex;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  justify-content: center;
+  padding: 5% 10%;
+  transition: all .3s linear;
+}
+.enter__link:hover {
+  transition: all .3s linear;
+  background-color: #94979a;
+  color: #282f35;
+}
+
+/*=====  End of ENTER SHOP  ======*/
+/*=============================================
+=                   MAILING                   =
+=============================================*/
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5%;
+}
+.contact__header {
+  margin: 2%;
+  color: #848789;
+  font-style: italic;
+  font-size: 1.3em;
+}
+.contact__form {
+  display: inline-flex;
+}
+.contact__email {
+  margin-left: 3px;
+  width: 250px;
+  padding: 15px;
+  font-style: italic;
+  color: #929292;
+  font-size: 0.9em;
+  border: 1px solid #929292;
+}
+.contact__btn {
+  color: #fff;
+  background-color: #64c29e;
+  border: none;
+  width: 70px;
+  font-size: 1.3em;
+  font-weight: 300;
+  margin-left: 5px;
+}
+.contact__visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*=====  End of MAILING  ======*/
+/*=============================================
+=                   FOOTER                    =
+=============================================*/
+.footer {
+  display: inline-flex;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+  justify-content: space-around;
+}
+.footer__col {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.footer__col--column {
+  flex-direction: column;
+}
+.footer__item {
+  margin: 7px;
+  font-size: 0.85em;
+  color: #848789;
+  font-style: italic;
+}
+.footer__address {
+  font-size: 0.85em;
+  color: #848789;
+}
+.footer__address--bold {
+  font-weight: bold;
+}
+
+/*=====  End of FOOTER  ======*/
