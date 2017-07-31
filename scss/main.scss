@@ -249,3 +249,137 @@ html, body {
 
 /*=====  End of SHOP  ======*/
 
+
+/*=============================================
+=                 ENTER SHOP                  =
+=============================================*/
+
+.enter {
+    display: flex;
+    width: 100%;
+    background-color: $enter-shop;
+
+    &__btn {
+        margin: 4% auto;
+        width: 250px;
+        background-color: transparent;
+        border: 1px solid $btn-shop-color;
+        padding: 0;
+    }
+
+    &__link {
+        display: flex;
+        letter-spacing: 1px;
+        color: #fff;
+        text-decoration: none;
+        justify-content: center;
+        padding: 5% 10%;
+        transition: all .3s linear;
+
+        &:hover {
+            transition: all .3s linear;
+            background-color: $btn-shop-color;
+            color: $enter-shop;
+        }
+    }
+}
+
+/*=====  End of ENTER SHOP  ======*/
+
+
+/*=============================================
+=                   MAILING                   =
+=============================================*/
+
+.contact {
+    @include article-style;
+    padding: 5%;
+
+    &__header {
+        margin: 2%;
+        color: $content-font-color;
+        font-style: italic;
+        font-size: 1.3em;
+    }
+
+    &__form {
+        display: inline-flex;
+    }
+
+    &__email {
+        margin-left: 3px;
+        width: 250px;
+        padding: 15px;
+        font-style: italic;
+        color: #929292;
+        font-size: 0.9em;
+        border: 1px solid #929292;
+    }
+
+    &__btn {
+        color: #fff;
+        background-color: $hover-color;
+        border: none;
+        width: 70px;
+        font-size: 1.3em;
+        font-weight: 300;
+        margin-left: 5px; 
+    }
+
+    &__visuallyHidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+}
+
+/*=====  End of MAILING  ======*/
+
+
+/*=============================================
+=                   FOOTER                    =
+=============================================*/
+
+.footer {
+    @include flexbox-inline;
+    width: 100%;
+    padding: 5%;
+    justify-content: space-around;
+
+    &__col {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        &--column {
+            flex-direction: column; 
+        }
+    }
+
+    &__item {
+        margin: 7px;
+        font-size: 0.85em;
+        color: $content-font-color;
+        font-style: italic;
+    }
+
+    &__address {
+        font-size: 0.85em;
+        color: $content-font-color;
+
+        &--bold {
+            font-weight: bold;
+        }
+    }
+}
+
+/*=====  End of FOOTER  ======*/
+
+

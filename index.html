@@ -131,35 +131,38 @@
         </section>
         <!-- ENTER SHOP -->
         <section class="enter">
-            <button class="shop__btn"><a href="#">DISCOVER THE SHOP</a></button> 
+            <button class="enter__btn"><a href="#" class="enter__link">DISCOVER THE SHOP</a></button> 
         </section>    
         <!-- MAILING -->
-        <section id="contact" class="mailing">
-            <img src="img/logo/main_logo.png" alt="logo" class="contact__logo">
+        <section id="contact" class="contact">
+            <img src="img/logo/main_logo.png" alt="logo">
             <h3 class="contact__header">Stay on the saddle!</h3>
-            <label for="email" class="visuallyHidden">Email</label>
-            <input type="text" id="email" placeholder="enter your email..." class="contact__email" required>
-            <input type="submit" value="GO" class="contact__btn">
+            <form action="" class="contact__form">
+                <label for="email" class="contact__visuallyHidden">Email</label>
+                <input type="text" id="email" placeholder="enter your email..." class="contact__email" required>
+                <input type="submit" value="GO" class="contact__btn">
+            </form>
         </section>
     </main>
     <footer class="footer">
         <!-- address -->
-        <section class="footer__items">
+        <section class="footer__col footer__col--column">
             <p class="footer__address footer__address--bold">AOD New York</p>
             <p class="footer__address">2250 Lexington Avenue </p>
             <p class="footer__address">New York, NY 10035  - info@domain.com</p>
         </section>
         <!-- social -->
-        <section class="footer__items">
-            <ul class="footer__social">
+        <section class="footer__col">
+            <ul class="footer__col">
                 <li class="footer__item"><a href="#" class="footer__link"><img src="img/icons/twitter_ico.png" alt="twitter icon" class="footer__twitter"></a></li>
                 <li class="footer__item"><a href="#" class="footer__link"><img src="img/icons/facebook_ico.png" alt="facebook icon" class="footer__facebook"></a></li>
                 <li class="footer__item"><a href="#" class="footer__link"><img src="img/icons/pinterest_ico.png" alt="pinterest icon" class="footer__pinterest"></a></li>
             </ul>
         </section>
         <!-- copyright -->
-        <section class="footer__item">
-            <p class="footer__copyright">Handcrafted by<img src="img/logo/footer_logo.png" alt="yebo" class="footer__logo"></p>
+        <section class="footer__col">
+            <p class="footer__item">Handcrafted by</p>
+            <img src="img/logo/footer_logo.png" alt="yebo">
         </section>
     </footer>
 </body>
