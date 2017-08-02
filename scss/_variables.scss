@@ -1,17 +1,17 @@
 // main font
 $main-font: "Lato", Arial, sans-serif;
 
-// font colors
+
+// colors
 $menu-font-color: #4d4959;
 $header-font-color: #353738;
 $content-font-color: #848789;
 $hover-color: #64c29e;
+$enter-shop-btn: #94979a;
+$enter-shop-bg: #282f35;
 
 
-// colors of other elements
-$backg-color: #ffffff;
-$btn-shop-color: #94979a;
-$enter-shop: #282f35;
-
-
-
+// Media queries width
+$small: "(max-width: 717px)";
+$medium: "(max-width: 950px)";
+$large: "(max-width: 1150px)";

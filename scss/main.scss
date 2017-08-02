@@ -113,9 +113,12 @@ html, body {
 
 .work {
     @include flexbox-inline;
+    flex-wrap: wrap;
 
     &__image {
         display: flex;
+        min-width: 400px;
+        min-height: 400px;
         flex: 2;
         @include bg-image(other);
         align-items: center;
@@ -138,6 +141,7 @@ html, body {
 
     &__info {
         display: flex;
+        min-width: 300px;
         flex-direction: column;
         flex: 1;
     }
@@ -155,7 +159,7 @@ html, body {
             height: 30px;
             position: absolute;
             background-color: #fff;
-            z-index: 100;
+            z-index: 1000;
             bottom: -5px;
             transform: rotate(45deg);
         }
@@ -172,7 +176,7 @@ html, body {
 
         &:after {
             content: "";
-            display: flex;
+            display: block;
             width: 40px;
             border-bottom: 1px solid $content-font-color;
             margin: auto;
@@ -195,8 +199,11 @@ html, body {
 .shop {
     @include flexbox-inline;
     width: 100%;
+    flex-wrap: wrap;
     
     &__large {
+        min-width: 300px;
+        min-height: 300px;
         display: flex;
         flex: 2;
         align-items: center;
@@ -209,7 +216,7 @@ html, body {
        width: 100%;
     }
 
-    &__cell {
+    &__cell {        
         width: 100%;
         display: flex;
         flex: 1;
@@ -217,6 +224,11 @@ html, body {
         text-align: center;
         position: relative;
         overflow: hidden;
+
+        &--big {
+            min-width: 150px;
+            min-height: 300px;
+        }
 
         &:hover > .shop__link {
             transition: opacity 0.4s linear;
@@ -231,7 +243,7 @@ html, body {
 
     &__link {
         position: absolute;
-        background-color: #64c29e;
+        background-color: $hover-color;
         opacity: 0.85;
         width: 100%;
         height: 100%;
@@ -257,13 +269,13 @@ html, body {
 .enter {
     display: flex;
     width: 100%;
-    background-color: $enter-shop;
+    background-color: $enter-shop-bg;
 
     &__btn {
         margin: 4% auto;
         width: 250px;
         background-color: transparent;
-        border: 1px solid $btn-shop-color;
+        border: 1px solid $enter-shop-btn;
         padding: 0;
     }
 
@@ -278,8 +290,8 @@ html, body {
 
         &:hover {
             transition: all .3s linear;
-            background-color: $btn-shop-color;
-            color: $enter-shop;
+            background-color: $enter-shop-btn;
+            color: $enter-shop-bg;
         }
     }
 }
@@ -348,18 +360,27 @@ html, body {
 .footer {
     @include flexbox-inline;
     width: 100%;
-    padding: 5%;
-    justify-content: space-around;
+    padding: 5% 10%;
+    flex-wrap: wrap-reverse;
 
     &__col {
         display: flex;
         flex: 1;
         flex-direction: row;
-        align-items: center;
+        align-self: center;
         justify-content: center;
         
-        &--column {
-            flex-direction: column; 
+        &--start {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        &--end {
+            justify-content: flex-end;
+        }
+
+        &--social {
+            min-width: 300px;
         }
     }
 
@@ -370,7 +391,7 @@ html, body {
         font-style: italic;
     }
 
-    &__address {
+    &__address { 
         font-size: 0.85em;
         color: $content-font-color;
 
