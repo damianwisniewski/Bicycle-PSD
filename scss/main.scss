@@ -17,6 +17,7 @@ html, body {
     @include bg-image(main_img);
     background-size: cover;
     text-align: center;
+    position: relative;
 
 /*----------  Navigation  ----------*/
     
@@ -30,6 +31,60 @@ html, body {
     &__logo {
         position: absolute;
         top: 35px;
+    }
+
+    
+    /*----------  HAMBURGER  ----------*/
+    
+    &__button {
+        display: none;
+        position: relative;
+        align-items: flex-end;
+        align-self: center;
+        width: 40px;
+        height: 30px;
+        padding: 0;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-top: 3px solid $enter-shop-bg;
+        transition: transform .1s linear;
+
+        &:before {
+            content: "";
+            display: flex;
+            width: 100%;
+            border-top: 3px solid $enter-shop-bg;
+            position: absolute;
+            transition: transform .1s linear;
+        }
+
+        &:after {
+            content: "";
+            display: flex;
+            width: 100%;
+            border-top: 3px solid $enter-shop-bg;
+            position: absolute;
+            transform: translateY(14px);
+            transition: transform .1s linear;
+        }
+
+        &--used {
+            transition: transform .1s linear;
+            width: 20px;
+            transform: rotate(45deg);
+            
+            &:before {
+                transition: transform .1s linear;
+                transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
+                width: 200%;
+            }
+
+            &:after {
+                transition: transform .1s linear;
+                transform: rotate(-90deg) translateY(9px) translateX(5px);
+            }
+        }
     }
     
     &__list {
@@ -141,7 +196,7 @@ html, body {
 
     &__info {
         display: flex;
-        min-width: 300px;
+        min-width: 400px;
         flex-direction: column;
         flex: 1;
     }
@@ -399,8 +454,116 @@ html, body {
             font-weight: bold;
         }
     }
+
+    &__scrollTop {
+        position: fixed;
+        bottom: 1%;
+        right: 1%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        background-color: rgba(100, 194, 158, 0.75);
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            transition: all 0.2s ease-out;
+            bottom: 1.5%;
+        }
+
+        &:after {
+            content: "";
+            width: 20px;
+            height: 5px;
+            background-color: #fff;
+            position: absolute;
+            transform: rotate(125deg) translateX(5px) translateY(15px)
+        }
+
+        &:before {
+            content: "";
+            width: 19px;
+            height: 5px;
+            background-color: #fff;
+            position: absolute;
+            transform: rotate(47deg) translateX(-5px) translateY(0px);
+        }        
+    }
 }
 
 /*=====  End of FOOTER  ======*/
 
+@media #{$large} {
 
+}
+
+@media #{$medium} {
+
+    .header {
+        overflow: hidden;
+/*----------  Navigation  ----------*/
+    
+        &__nav {
+            display: flex;
+            min-width: min-content;
+            max-width: none;
+            width: 100%;
+            margin-top: 0;
+            padding: 5%;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            position: static;
+        }
+
+        &__button {
+            display: flex;
+        }
+        
+        &__list {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            justify-content: flex-start;
+            margin-top: 20%;
+            right: 0;
+            margin-right: -200%;
+            transition: all .3s linear;
+            width: 100%;
+                        
+
+            &--open {
+                display: flex;
+                margin-right: 0;
+                transition: all .3s linear;
+            }
+        }
+
+        &__item {
+            background-color: #FFF;
+            opacity: 0.6;
+            font-size: 2em;
+            font-weight: bold;
+            margin-right: 0;
+            line-height: 4em;
+
+            &:nth-child(even):before {
+                display: none;
+                
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-family: $main-font;
+            color: $menu-font-color;
+
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}
