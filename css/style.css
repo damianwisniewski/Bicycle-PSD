@@ -159,9 +159,12 @@ html, body {
   display: inline-flex;
   flex: 1;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .work__image {
   display: flex;
+  min-width: 400px;
+  min-height: 400px;
   flex: 2;
   background: url(../img/images/other.jpg) no-repeat center;
   background-size: cover;
@@ -184,6 +187,7 @@ html, body {
 }
 .work__info {
   display: flex;
+  min-width: 300px;
   flex-direction: column;
   flex: 1;
 }
@@ -203,7 +207,7 @@ html, body {
   height: 30px;
   position: absolute;
   background-color: #fff;
-  z-index: 100;
+  z-index: 1000;
   bottom: -5px;
   transform: rotate(45deg);
 }
@@ -223,7 +227,7 @@ html, body {
 }
 .work__content:after {
   content: "";
-  display: flex;
+  display: block;
   width: 40px;
   border-bottom: 1px solid #848789;
   margin: auto;
@@ -242,8 +246,11 @@ html, body {
   flex: 1;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 .shop__large {
+  min-width: 300px;
+  min-height: 300px;
   display: flex;
   flex: 2;
   align-items: center;
@@ -264,6 +271,10 @@ html, body {
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+.shop__cell--big {
+  min-width: 150px;
+  min-height: 300px;
 }
 .shop__cell:hover > .shop__link {
   transition: opacity 0.4s linear;
@@ -378,18 +389,25 @@ html, body {
   flex: 1;
   justify-content: center;
   width: 100%;
-  padding: 5%;
-  justify-content: space-around;
+  padding: 5% 10%;
+  flex-wrap: wrap-reverse;
 }
 .footer__col {
   display: flex;
   flex: 1;
   flex-direction: row;
-  align-items: center;
+  align-self: center;
   justify-content: center;
 }
-.footer__col--column {
+.footer__col--start {
   flex-direction: column;
+  justify-content: flex-start;
+}
+.footer__col--end {
+  justify-content: flex-end;
+}
+.footer__col--social {
+  min-width: 300px;
 }
 .footer__item {
   margin: 7px;
