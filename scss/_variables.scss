@@ -12,6 +12,6 @@ $enter-shop-bg: #282f35;
 
 
 // Media queries width
-$small: "(max-width: 717px)";
-$medium: "(max-width: 950px)";
-$large: "(max-width: 1150px)";
+$small: "all and (max-width: 717px)";
+$medium: "all and (max-width: 950px)";
+$large: "all and (max-width: 1150px)";

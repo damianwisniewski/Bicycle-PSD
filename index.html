@@ -10,19 +10,20 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header id="head" class="header">
         <nav class="header__nav">
             <!-- LOGO -->
             <h1 class="header__logo">
                 <a href="#" class="header__link"><img src="img/logo/main_logo.png" alt="Bicycle logo"></a>
             </h1>
             <!-- NAVIGATION -->
-            <ul class="header__list">
+            <ul id="list" class="header__list">
                 <li class="header__item"><a href="#about" class="header__link">ABOUT US</a></li>
                 <li class="header__item header__item--longer"><a href="#work" class="header__link">WORK</a></li>
                 <li class="header__item"><a href="#shop" class="header__link">SHOP</a></li>
                 <li class="header__item"><a href="#contact" class="header__link">CONTACT</a></li>
             </ul>
+            <button id="hamburger" class="header__button"></button>
         </nav> 
     </header>
     <main>
@@ -164,6 +165,8 @@
             <p class="footer__item">Handcrafted by</p>
             <img src="img/logo/footer_logo.png" alt="yebo">
         </section>
+        <button id="scrollTop" class="footer__scrollTop"></button>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
