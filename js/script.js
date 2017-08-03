@@ -64,6 +64,12 @@ scrollTopButton.addEventListener("click", function() {
     scrolling();
 }); 
 
-
+window.addEventListener("scroll", function(){
+    if(header.getBoundingClientRect().bottom < 0) {
+        scrollTopButton.classList.remove("footer__scrollTop--hidden");
+    } else {
+        scrollTopButton.classList.add("footer__scrollTop--hidden");
+    }
+});
 
 });
