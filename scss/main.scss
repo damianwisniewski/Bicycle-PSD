@@ -172,8 +172,8 @@ html, body {
 
     &__image {
         display: flex;
-        min-width: 400px;
-        min-height: 400px;
+        // min-width: 450px;
+        // min-height: 450px;
         flex: 2;
         @include bg-image(other);
         align-items: center;
@@ -196,7 +196,7 @@ html, body {
 
     &__info {
         display: flex;
-        min-width: 400px;
+        // min-width: 450px;
         flex-direction: column;
         flex: 1;
     }
@@ -457,15 +457,15 @@ html, body {
 
     &__scrollTop {
         position: fixed;
-        bottom: 1%;
-        right: 1%;
+        bottom: 2%;
+        right: 2%;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         border: none;
         outline: none;
         background-color: rgba(100, 194, 158, 0.75);
-        transition: all 0.2s ease-out;
+        transition: all 0.5s ease-out;
 
         &:hover {
             transition: all 0.2s ease-out;
@@ -488,22 +488,32 @@ html, body {
             background-color: #fff;
             position: absolute;
             transform: rotate(47deg) translateX(-5px) translateY(0px);
-        }        
+        }
+        
+        &--hidden {
+            bottom: -20%;
+            transition: all 0.5s linear;
+        }
     }
 }
 
 /*=====  End of FOOTER  ======*/
 
 @media #{$large} {
-
+    .work {
+    
+        &__image--red {
+            display: none;
+        }
+    }
 }
 
 @media #{$medium} {
 
     .header {
         overflow: hidden;
-/*----------  Navigation  ----------*/
-    
+
+        /*----------  Navigation  ----------*/
         &__nav {
             display: flex;
             min-width: min-content;
@@ -547,23 +557,42 @@ html, body {
             font-size: 2em;
             font-weight: bold;
             margin-right: 0;
-            line-height: 4em;
+            line-height: 2em;
 
             &:nth-child(even):before {
                 display: none;
                 
             }
         }
+    }
+    
+    .work {
 
-        &__link {
-            text-decoration: none;
-            letter-spacing: 2px;
-            font-family: $main-font;
-            color: $menu-font-color;
+        &__image {
+            flex: 1;
+        }
+    }
+}
 
-            &:hover {
-                color: $hover-color;
-            }
+@media #{$small} {
+
+    .footer {
+        &__col--social {
+            order: 1;
+            margin-bottom: 2em;
+            flex-basis: auto;
+        }
+    }
+
+    .work {
+
+        &__image {
+            flex-basis: auto;
+            min-height: 200px; 
+        }
+
+        &__info {
+            flex-basis: auto; 
         }
     }
 }
