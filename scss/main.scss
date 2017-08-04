@@ -47,14 +47,14 @@ html, body {
         border: none;
         outline: none;
         background-color: transparent;
-        border-top: 3px solid $enter-shop-bg;
+        border-top: 5px solid $enter-shop-bg;
         transition: transform .1s linear;
 
         &:before {
             content: "";
             display: flex;
             width: 100%;
-            border-top: 3px solid $enter-shop-bg;
+            border-top: 5px solid $enter-shop-bg;
             position: absolute;
             transition: transform .1s linear;
         }
@@ -63,9 +63,9 @@ html, body {
             content: "";
             display: flex;
             width: 100%;
-            border-top: 3px solid $enter-shop-bg;
+            border-top: 5px solid $enter-shop-bg;
             position: absolute;
-            transform: translateY(14px);
+            transform: translateY(12px);
             transition: transform .1s linear;
         }
 
@@ -172,8 +172,6 @@ html, body {
 
     &__image {
         display: flex;
-        // min-width: 450px;
-        // min-height: 450px;
         flex: 2;
         @include bg-image(other);
         align-items: center;
@@ -196,7 +194,6 @@ html, body {
 
     &__info {
         display: flex;
-        // min-width: 450px;
         flex-direction: column;
         flex: 1;
     }
@@ -257,8 +254,8 @@ html, body {
     flex-wrap: wrap;
     
     &__large {
-        min-width: 300px;
-        min-height: 300px;
+        // min-width: 300px;
+        // min-height: 300px;
         display: flex;
         flex: 2;
         align-items: center;
@@ -281,8 +278,8 @@ html, body {
         overflow: hidden;
 
         &--big {
-            min-width: 150px;
-            min-height: 300px;
+            // min-width: 150px;
+            // min-height: 300px;
         }
 
         &:hover > .shop__link {
@@ -499,100 +496,6 @@ html, body {
 
 /*=====  End of FOOTER  ======*/
 
-@media #{$large} {
-    .work {
-    
-        &__image--red {
-            display: none;
-        }
-    }
-}
 
-@media #{$medium} {
+@import "_queries.scss";
 
-    .header {
-        overflow: hidden;
-
-        /*----------  Navigation  ----------*/
-        &__nav {
-            display: flex;
-            min-width: min-content;
-            max-width: none;
-            width: 100%;
-            margin-top: 0;
-            padding: 5%;
-            justify-content: space-between;
-        }
-
-        &__logo {
-            position: static;
-        }
-
-        &__button {
-            display: flex;
-        }
-        
-        &__list {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            justify-content: flex-start;
-            margin-top: 20%;
-            right: 0;
-            margin-right: -200%;
-            transition: all .3s linear;
-            width: 100%;
-                        
-
-            &--open {
-                display: flex;
-                margin-right: 0;
-                transition: all .3s linear;
-            }
-        }
-
-        &__item {
-            background-color: #FFF;
-            opacity: 0.6;
-            font-size: 2em;
-            font-weight: bold;
-            margin-right: 0;
-            line-height: 2em;
-
-            &:nth-child(even):before {
-                display: none;
-                
-            }
-        }
-    }
-    
-    .work {
-
-        &__image {
-            flex: 1;
-        }
-    }
-}
-
-@media #{$small} {
-
-    .footer {
-        &__col--social {
-            order: 1;
-            margin-bottom: 2em;
-            flex-basis: auto;
-        }
-    }
-
-    .work {
-
-        &__image {
-            flex-basis: auto;
-            min-height: 200px; 
-        }
-
-        &__info {
-            flex-basis: auto; 
-        }
-    }
-}

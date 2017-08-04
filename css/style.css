@@ -96,14 +96,14 @@ html, body {
   border: none;
   outline: none;
   background-color: transparent;
-  border-top: 3px solid #282f35;
+  border-top: 5px solid #282f35;
   transition: transform .1s linear;
 }
 .header__button:before {
   content: "";
   display: flex;
   width: 100%;
-  border-top: 3px solid #282f35;
+  border-top: 5px solid #282f35;
   position: absolute;
   transition: transform .1s linear;
 }
@@ -111,9 +111,9 @@ html, body {
   content: "";
   display: flex;
   width: 100%;
-  border-top: 3px solid #282f35;
+  border-top: 5px solid #282f35;
   position: absolute;
-  transform: translateY(14px);
+  transform: translateY(12px);
   transition: transform .1s linear;
 }
 .header__button--used {
@@ -293,8 +293,6 @@ html, body {
   flex-wrap: wrap;
 }
 .shop__large {
-  min-width: 300px;
-  min-height: 300px;
   display: flex;
   flex: 2;
   align-items: center;
@@ -315,10 +313,6 @@ html, body {
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-.shop__cell--big {
-  min-width: 150px;
-  min-height: 300px;
 }
 .shop__cell:hover > .shop__link {
   transition: opacity 0.4s linear;
@@ -504,6 +498,9 @@ html, body {
 }
 
 /*=====  End of FOOTER  ======*/
+/*=============================================
+=                MEDIA QUERIES                =
+=============================================*/
 @media all and (max-width: 1220px) {
   .work__image--red {
     display: none;
@@ -572,7 +569,25 @@ html, body {
     flex-basis: auto;
     min-height: 200px;
   }
+  .work__image--dark {
+    order: -1;
+  }
   .work__info {
     flex-basis: auto;
   }
+
+  .shop {
+    display: inline-flex;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .shop__large {
+    flex-basis: auto;
+  }
+  .shop__cell--big {
+    flex-basis: 170px;
+  }
 }
+/*=====  End of MEDIA QUERIES  ======*/
