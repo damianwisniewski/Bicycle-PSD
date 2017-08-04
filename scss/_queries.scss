@@ -1,0 +1,124 @@
+
+/*=============================================
+=                MEDIA QUERIES                =
+=============================================*/
+
+
+@media #{$large} {
+    .work {
+    
+        &__image--red {
+            display: none;
+        }
+    }
+}
+
+@media #{$medium} {
+
+    .header {
+        overflow: hidden;
+
+        /*----------  Navigation  ----------*/
+        &__nav {
+            display: flex;
+            min-width: min-content;
+            max-width: none;
+            width: 100%;
+            margin-top: 0;
+            padding: 5%;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            position: static;
+        }
+
+        &__button {
+            display: flex;
+        }
+        
+        &__list {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            justify-content: flex-start;
+            margin-top: 20%;
+            right: 0;
+            margin-right: -200%;
+            transition: all .3s linear;
+            width: 100%;
+                        
+
+            &--open {
+                display: flex;
+                margin-right: 0;
+                transition: all .3s linear;
+            }
+        }
+
+        &__item {
+            background-color: #FFF;
+            opacity: 0.6;
+            font-size: 2em;
+            font-weight: bold;
+            margin-right: 0;
+            line-height: 2em;
+
+            &:nth-child(even):before {
+                display: none;
+                
+            }
+        }
+    }
+    
+    .work {
+
+        &__image {
+            flex: 1;
+        }
+    }
+}
+
+@media #{$small} {
+
+    .footer {
+        &__col--social {
+            order: 1;
+            margin-bottom: 2em;
+            flex-basis: auto;
+        }
+    }
+
+    .work {
+
+        &__image {
+            flex-basis: auto;
+            min-height: 200px;
+            
+            &--dark {
+                order: -1;
+            }
+        }
+
+        &__info {
+            flex-basis: auto; 
+        }
+    }
+
+    .shop {
+        @include flexbox-inline;
+        width: 100%;
+        flex-wrap: wrap;
+        
+        &__large {
+            flex-basis: auto;
+        }
+
+        &__cell--big {
+            flex-basis: 170px;
+        }
+    }
+}
+
+
+/*=====  End of MEDIA QUERIES  ======*/

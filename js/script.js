@@ -57,7 +57,7 @@ listItem[0].addEventListener("click", checkID); // scrolling by click on navigat
 
 scrollTopButton.addEventListener("click", function() { 
     var loc = Math.round(header.getBoundingClientRect().top);
-    
+
     step = Math.round(loc/80);
     distance = Math.abs(loc);
 
