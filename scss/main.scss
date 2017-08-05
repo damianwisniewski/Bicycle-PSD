@@ -123,6 +123,44 @@ html, body {
             color: $hover-color;
         }
     }
+
+    &__scrollBtn {
+        display: block;
+        width: 30px;
+        height: 50px;
+        border-radius: 40%;
+        outline: none;
+        border: 2px solid #94979a;
+        background-color: #fff;
+        position: absolute;
+        bottom: 5%;
+        left: 49.25%;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 7px;
+            background-color: red;
+            border-radius: 50%;
+            margin-right: auto;
+            margin-left: auto;
+            transform: translateY(-30px);
+        }
+    }
+    
+    &__scrollLabel {
+        display: block;
+        width: 30px;
+        color: #FFF;
+        font-weight: bold;
+        position: absolute;
+        bottom: 11%;
+        left: 48.5%;
+        cursor: pointer;
+    }
 }
 
 /*=====  End of HEADER  ======*/
@@ -148,8 +186,10 @@ html, body {
 }
 
 .twitter {
+
     &__content {
         font-style: italic;
+        margin: auto;
     }
 
     &__time {
@@ -157,7 +197,34 @@ html, body {
         color: $content-font-color;
         text-transform: lowercase;
     }
+
+    &__slide {
+        display: none;
+
+        &--show {
+            display: block;
+        }
+    }
+
+    &__buttonbox {
+        display: inline-flex;
+        margin-top: 30px;
+    }
+
+    &__buttons {
+        margin: 0 5px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #94979a;
+        border-radius: 50%;
+        outline: none;
+        
+        &:hover, &--selected {
+            background-color: #94979a;
+        }
+    }
 }
+
 
 /*=====  End of ABOUT and TWITTER   ======*/
 
@@ -254,8 +321,6 @@ html, body {
     flex-wrap: wrap;
     
     &__large {
-        // min-width: 300px;
-        // min-height: 300px;
         display: flex;
         flex: 2;
         align-items: center;
@@ -276,11 +341,6 @@ html, body {
         text-align: center;
         position: relative;
         overflow: hidden;
-
-        &--big {
-            // min-width: 150px;
-            // min-height: 300px;
-        }
 
         &:hover > .shop__link {
             transition: opacity 0.4s linear;

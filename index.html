@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Bicycle-PSD</title>
@@ -24,7 +24,9 @@
                 <li class="header__item"><a href="#contact" class="header__link">CONTACT</a></li>
             </ul>
             <button id="hamburger" class="header__button"></button>
-        </nav> 
+        </nav>
+        <label for="scrollButton" class="header__scrollLabel">Scroll down</label>
+        <button id="scrollButton" class="header__scrollBtn"></button> 
     </header>
     <main>
         <!-- ABOUT -->
@@ -79,9 +81,28 @@
         </section>
         <!-- TWITTER -->
         <section class="twitter">
-            <img src="img/icons/twitter_trans.png" alt="Twitter icon" class="twitter__icon">
-            <h2 class="twitter__header">AOD New York  @aod  <span class="twitter__time">/  35 min</span></h2>
-            <p class="twitter__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.</p>
+            <ul id="slider" class="twitter__slider">
+                <li class="twitter__slide">
+                    <img src="img/icons/twitter_trans.png" alt="Twitter icon" class="twitter__icon">
+                    <h2 class="twitter__header">AOD Las Vegas  @aod  <span class="twitter__time">/  23 min</span></h2>
+                    <p class="twitter__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.</p>
+                </li>
+                <li class="twitter__slide">
+                    <img src="img/icons/twitter_trans.png" alt="Twitter icon" class="twitter__icon">
+                    <h2 class="twitter__header">AOD New York  @aod  <span class="twitter__time">/  35 min</span></h2>
+                    <p class="twitter__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ducimus, aspernatur quisquam distinctio, saepe a dignissimos, veniam consequuntur totam harum, officiis quod non voluptatibus possimus.</p>
+                </li>
+                <li class="twitter__slide">
+                    <img src="img/icons/twitter_trans.png" alt="Twitter icon" class="twitter__icon">
+                    <h2 class="twitter__header">AOD Chicago  @aod  <span class="twitter__time">/  49 min</span></h2>
+                    <p class="twitter__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quod quam nulla, quasi minima cum ipsa distinctio sint. Lorem ipsum dolor sit amet.</p>
+                </li>
+            </ul>
+            <div id="button" class="twitter__buttonbox">
+                <button value="0" class="twitter__buttons"></button>
+                <button value="1" class="twitter__buttons"></button>
+                <button value="2" class="twitter__buttons"></button>
+            </div>
         </section>
         <!-- SHOP -->
         <section id="shop" class="shop">
