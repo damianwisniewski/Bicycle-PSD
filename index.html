@@ -18,15 +18,26 @@
             </h1>
             <!-- NAVIGATION -->
             <ul id="list" class="header__list">
-                <li class="header__item"><a href="#about" class="header__link">ABOUT US</a></li>
-                <li class="header__item header__item--longer"><a href="#work" class="header__link">WORK</a></li>
-                <li class="header__item"><a href="#shop" class="header__link">SHOP</a></li>
-                <li class="header__item"><a href="#contact" class="header__link">CONTACT</a></li>
+                <li class="header__item">
+                    <a href="#about" class="header__link">ABOUT US</a>
+                </li>
+                <li class="header__item header__item--longer">
+                    <a href="#work" class="header__link">WORK</a>
+                </li>
+                <li class="header__item">
+                    <a href="#shop" class="header__link">SHOP</a>
+                </li>
+                <li class="header__item">
+                    <a href="#contact" class="header__link">CONTACT</a>
+                </li>
             </ul>
             <button id="hamburger" class="header__button"></button>
         </nav>
-        <label for="scrollButton" class="header__scrollLabel">Scroll down</label>
-        <button id="scrollButton" class="header__scrollBtn"></button> 
+        <div class="header__scrollContainer">
+            <button id="scrollButton" class="header__scrollBtn">
+                <a href="#about" class="header__scrollLink"></a>
+            </button> 
+        </div>
     </header>
     <main>
         <!-- ABOUT -->
@@ -39,7 +50,7 @@
             <!-- work1 -->
         <section id="work" class="work">
             <div class="work__image">
-                <img src="img/logo/bicycle_company.png" alt="Bicycle Company logo">
+                <img src="img/logo/bicycle_company.png" class="work__hiddenLeft" alt="Bicycle Company logo">
             </div>
             <div class="work__info">
                 <article class="work__article">
@@ -61,13 +72,13 @@
                 <img src="img/images/seat-black.jpg" alt="Example of seat" class="work__example">
             </div>
             <div class="work__image work__image--dark">
-                <img src="img/logo/vintage.png" alt="Vintage logo">
+                <img src="img/logo/vintage.png" class="work__hiddenRight" alt="Vintage logo">
             </div>
         </section>
             <!-- work3 -->
         <section class="work">
             <div class="work__image work__image--frame">
-                <img src="img/logo/bicycle.png" alt="Bicycle logo">
+                <img src="img/logo/bicycle.png" class="work__hiddenLeft" alt="Bicycle logo">
             </div>
             <div class="work__info">
                 <article class="work__article">

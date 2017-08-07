@@ -1,21 +1,31 @@
 // document.addEventListener("DOMContentLoaded", function() {
 
-
-var hamburger = document.querySelector("#hamburger"), // hamburger icon
-    list = document.querySelector("#list"); // Navigation list
-    listItem = document.querySelectorAll("#list"); // Items of navigation list
-    header = document.querySelector("#head"); // header
-    scrollTopButton = document.querySelector("#scrollTop");
+var header = document.querySelectorAll("#head"); // Links in header
 
 /*----------  HAMBURGER  ----------*/
+var hamburger = document.querySelector("#hamburger"), // Hamburger icon
+    list = document.querySelector("#list"); // Navigation List
 
-function hamburgerMenu(e) {
+function hamburgerMenu() {
     hamburger.classList.toggle("header__button--used");
     list.classList.toggle("header__list--open");
 }
 
-hamburger.addEventListener("click", hamburgerMenu);
-listItem[0].addEventListener("click", hamburgerMenu);
+hamburger.addEventListener("click", hamburgerMenu); //opening list and hamburger menu
+list.addEventListener("click", hamburgerMenu); // closeing list after link was clicked
+
+
+var workLogo = document.querySelectorAll(".work__logo");
+
+function showLogo () {
+    for (i=0; i<workLogo.length; i++) {
+        if(window.innerHeight - workLogo[i].getBoundingClientRect().bottom >= 0) {
+            workLogo[i].classList.add("work__show");
+        } 
+    }
+}
+
+window.addEventListener("scroll", showLogo);
 
 
 /*----------  Scrolling  ----------*/
@@ -24,25 +34,25 @@ var step, distance;
 var distancePassed = 0;
 
 function checkID(e) {
-    e.preventDefault();
+    if (e.target.hasAttribute("href")) {
+        e.preventDefault();
 
-    var name = e.target.getAttribute("href"),
-        item = document.querySelector(name),
-        loc = Math.round(item.getBoundingClientRect().top);
+        var name = e.target.getAttribute("href"),
+            item = document.querySelector(name),
+            loc = Math.round(item.getBoundingClientRect().top);
 
-    step = Math.round(loc/80);
-    distance = Math.abs(loc);
-    
-    scrolling();
+        step = Math.round(loc/80);
+        distance = Math.abs(loc);
+        
+        scrolling();
+    }
 }
 
 function scrolling() {
-    var repeat;
     distancePassed += Math.abs(step);
 
     if(distancePassed >= distance){
         window.scrollBy(0 ,step);
-        clearTimeout(repeat);
         return distancePassed = 0;
     } else {
         window.scrollBy(0 ,step);
@@ -50,13 +60,15 @@ function scrolling() {
     repeat = setTimeout(scrolling, 16);
 }
 
-listItem[0].addEventListener("click", checkID); // scrolling by click on navigation list
+header[0].addEventListener("click", checkID);
 
 
 /*----------  Scroll to top button  ----------*/
 
+var scrollTopButton = document.querySelector("#scrollTop");
+
 scrollTopButton.addEventListener("click", function() { 
-    var loc = Math.round(header.getBoundingClientRect().top);
+    var loc = Math.round(header[0].getBoundingClientRect().top);
 
     step = Math.round(loc/80);
     distance = Math.abs(loc);
@@ -64,8 +76,8 @@ scrollTopButton.addEventListener("click", function() {
     scrolling();
 }); 
 
-window.addEventListener("scroll", function(){
-    if(header.getBoundingClientRect().bottom < 0) {
+window.addEventListener("scroll", function(){ // SHOW/HIDE scroll to top button
+    if(header[0].getBoundingClientRect().bottom < 0) {
         scrollTopButton.classList.remove("footer__scrollTop--hidden");
     } else {
         scrollTopButton.classList.add("footer__scrollTop--hidden");
@@ -75,7 +87,7 @@ window.addEventListener("scroll", function(){
 
 /*----------  Slider - twitter  ----------*/
 
-var sliders = document.querySelector("#slider"),
+var sliderContainer = document.querySelector("#slider"),
     slide = document.querySelectorAll(".twitter__slide"),
     buttons = document.querySelectorAll(".twitter__buttons"),
     index = 0,
@@ -92,8 +104,6 @@ function slider() {
 
     slide[index].classList.add("twitter__slide--show");
     buttons[index].classList.add("twitter__buttons--selected");
-
-    
 
     if(index >= slide.length -1)
         index = 0;
@@ -133,7 +143,7 @@ function fadeIn() {
     if (fadeNumber >= 1) {
         return fadeNumber = 1;
     } else {
-        sliders.style.opacity = fadeNumber;
+        sliderContainer.style.opacity = fadeNumber;
     }
     setTimeout(fadeIn, 60);
 }
@@ -143,7 +153,7 @@ function fadeOut() {
     if (fadeNumber <= 0) {
         return fadeNumber = 0;
     } else {
-        sliders.style.opacity = fadeNumber;
+        sliderContainer.style.opacity = fadeNumber;
         setTimeout(fadeOut, 60);
     }
 }
