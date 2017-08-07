@@ -4,7 +4,7 @@
 =============================================*/
 
 
-@media #{$large} {
+@media #{$large} { // Large 1220px
     .work {
     
         &__image--red {
@@ -13,10 +13,11 @@
     }
 }
 
-@media #{$medium} {
+@media #{$medium} { // Medium 950px
 
     .header {
         overflow: hidden;
+        @include bg-image(background-smaller);
 
         /*----------  Navigation  ----------*/
         &__nav {
@@ -79,7 +80,7 @@
     }
 }
 
-@media #{$small} {
+@media #{$small} {  // Small 720px
 
     .footer {
         &__col--social {
@@ -120,5 +121,20 @@
     }
 }
 
+@media #{$mini} {
+
+    .footer {
+        flex-direction: column;
+
+        &__col {
+            text-align: center;
+            margin: 5% 0;
+        }
+
+        &__col--social {
+            order: -1;
+        }
+    }
+}
 
 /*=====  End of MEDIA QUERIES  ======*/
