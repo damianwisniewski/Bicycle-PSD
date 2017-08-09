@@ -38,53 +38,6 @@ html, body {
     
     &__button {
         display: none;
-        position: relative;
-        align-items: flex-end;
-        align-self: center;
-        width: 40px;
-        height: 30px;
-        padding: 0;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        border-top: 5px solid $enter-shop-bg;
-        transition: transform .1s linear;
-
-        &:before {
-            content: "";
-            display: flex;
-            width: 100%;
-            border-top: 5px solid $enter-shop-bg;
-            position: absolute;
-            transition: transform .1s linear;
-        }
-
-        &:after {
-            content: "";
-            display: flex;
-            width: 100%;
-            border-top: 5px solid $enter-shop-bg;
-            position: absolute;
-            transform: translateY(12px);
-            transition: transform .1s linear;
-        }
-
-        &--used {
-            transition: transform .1s linear;
-            width: 20px;
-            transform: rotate(45deg);
-            
-            &:before {
-                transition: transform .1s linear;
-                transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
-                width: 200%;
-            }
-
-            &:after {
-                transition: transform .1s linear;
-                transform: rotate(-90deg) translateY(9px) translateX(5px);
-            }
-        }
     }
     
     &__list {
@@ -135,8 +88,8 @@ html, body {
 
     &__scrollBtn {
         display: block;
-        width: 35px;
-        height: 55px;
+        width: 25px;
+        height: 45px;
         border-radius: 40%;
         outline: none;
         border: 2px solid #4d4959;
@@ -146,14 +99,15 @@ html, body {
         padding: 0;
 
         &:after {
-            content: "SCROLL";
-            width: 100%;
-            font-size: 1.1em;
-            color: #64c29e;
-            font-weight: bold;
-            display: flex;
-            transform: translateY(-60px) rotate(-90deg);
-            animation: scroll 3.5s linear infinite;
+            content: "";
+            display: block;
+            margin: auto;
+            width: 7px;
+            height: 15px;
+            border-radius: 40%;
+            background-color: #64c29e;
+            transform: translateY(-60px);
+            animation: scroll 1.5s linear infinite;
         }
     }
 
@@ -167,8 +121,11 @@ html, body {
 }
 
 @keyframes scroll {
-    from { transform: translateY(-60px) rotate(-90deg); }
-    to { transform: translateY(100px) rotate(-90deg); }
+    0% { transform: translateY(-60px); opacity: 0.5;}
+    25% {transform: translateY(-50px); opacity: 0.75;}
+    50% {transform: translateY(-40px); opacity: 1;}
+    75% {transform: translateY(-30px); opacity: 0.75;}
+    100% { transform: translateY(0px); opacity: 0;}
 }
 
 /*=====  End of HEADER  ======*/
@@ -243,6 +200,7 @@ html, body {
 
 .work {
     @include flexbox-inline;
+    overflow: hidden;
     flex-wrap: wrap;
 
     &__image {
@@ -317,21 +275,18 @@ html, body {
 
     &__hiddenRight {
         transform: translateX(1000px);
-        transition: transform 1s ease-in-out;
     }
 
     &__hiddenLeft {
         transform: translateX(-1000px);
-        transition: transform 1s ease-in-out;
     }
 
-    &__hidden {
-        transform: scale(-100%);
-        transition: transform 1s ease-in-out;
+    &__article--hidden {
+        transform: scale(0.2, 0.2);
     }
 
     &__show {
-        transform: translateX(0);
+        transform: translateX(0) scale(1, 1);
         transition: transform 0.5s ease-in-out;
     }
 }
