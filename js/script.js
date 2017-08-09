@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 
 var header = document.querySelectorAll("#head"); // Links in header
 
@@ -15,11 +15,13 @@ hamburger.addEventListener("click", hamburgerMenu); //opening list and hamburger
 list.addEventListener("click", hamburgerMenu); // closeing list after link was clicked
 
 
-var workLogo = document.querySelectorAll(".work__logo");
+/*----------  Animated elements during scroll  ----------*/
+
+var workLogo = document.querySelectorAll(".work__hiddenLeft, .work__hiddenRight, .work__article--hidden");
 
 function showLogo () {
     for (i=0; i<workLogo.length; i++) {
-        if(window.innerHeight - workLogo[i].getBoundingClientRect().bottom >= 0) {
+        if(window.innerHeight - workLogo[i].getBoundingClientRect().top >= 0) {
             workLogo[i].classList.add("work__show");
         } 
     }
@@ -33,7 +35,7 @@ window.addEventListener("scroll", showLogo);
 var step, distance;
 var distancePassed = 0;
 
-function checkID(e) {
+function checkID(e) { // checking ID of element
     if (e.target.hasAttribute("href")) {
         e.preventDefault();
 
@@ -41,14 +43,14 @@ function checkID(e) {
             item = document.querySelector(name),
             loc = Math.round(item.getBoundingClientRect().top);
 
-        step = Math.round(loc/80);
+        step = Math.round(loc/70);
         distance = Math.abs(loc);
         
         scrolling();
     }
 }
 
-function scrolling() {
+function scrolling() {  // scrolling effect
     distancePassed += Math.abs(step);
 
     if(distancePassed >= distance){
@@ -57,7 +59,7 @@ function scrolling() {
     } else {
         window.scrollBy(0 ,step);
     }
-    repeat = setTimeout(scrolling, 16);
+    repeat = setTimeout(scrolling, 10);
 }
 
 header[0].addEventListener("click", checkID);
@@ -73,7 +75,7 @@ scrollTopButton.addEventListener("click", function() {
     step = Math.round(loc/80);
     distance = Math.abs(loc);
 
-    scrolling();
+    scrolling(); // using scroll efect
 }); 
 
 window.addEventListener("scroll", function(){ // SHOW/HIDE scroll to top button
@@ -88,13 +90,13 @@ window.addEventListener("scroll", function(){ // SHOW/HIDE scroll to top button
 /*----------  Slider - twitter  ----------*/
 
 var sliderContainer = document.querySelector("#slider"),
-    slide = document.querySelectorAll(".twitter__slide"),
-    buttons = document.querySelectorAll(".twitter__buttons"),
-    index = 0,
-    fadeTimer,
-    slideTimer;
+    slide = document.querySelectorAll(".twitter__slide"), //slides
+    buttons = document.querySelectorAll(".twitter__buttons"), // dots under slider
+    index = 0, //numer of slide
+    fadeTimer, // "setTimeout" of fadeOut
+    slideTimer; // "setTimeout" of changing slides
 
-function slider() {
+function slider() { // slider effect
     fadeIn();
     
     for(i=0; i< slide.length; i++){
@@ -119,9 +121,9 @@ window.addEventListener("load", slider);
 
 /*----------  Slider buttons  ----------*/
 
-var sliderButton = document.querySelectorAll("#button");
+var sliderButton = document.querySelectorAll("#button"); // dots under slider
 
-function selectSlide(e) {
+function selectSlide(e) { // changing slide after click on dot
     if (e.target.hasAttribute("value")) {
         index = parseInt(e.target.value);
         e.target.classList.add("twitter__buttons--selected");
@@ -161,4 +163,4 @@ function fadeOut() {
 /* End of Fade effect */
 
 
-// });
+});

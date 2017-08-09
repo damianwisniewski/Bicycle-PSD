@@ -6,7 +6,6 @@
 
 @media #{$large} { // Large 1220px
     .work {
-    
         &__image--red {
             display: none;
         }
@@ -34,30 +33,79 @@
             position: static;
         }
 
+        /*----------  HAMBURGER  ----------*/
+        
         &__button {
             display: flex;
+            position: relative;
+            align-items: flex-end;
+            align-self: center;
+            width: 40px;
+            height: 30px;
+            padding: 0;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-top: 5px solid $hover-color;
+            transition: transform .1s linear;
+
+            &:before {
+                content: "";
+                display: flex;
+                width: 100%;
+                border-top: 5px solid $hover-color;
+                position: absolute;
+                transition: transform .1s linear;
+            }
+
+            &:after {
+                content: "";
+                display: flex;
+                width: 100%;
+                border-top: 5px solid $hover-color;
+                position: absolute;
+                transform: translateY(12px);
+                transition: transform .1s linear;
+            }
+
+            &--used {
+                transition: transform .1s linear;
+                width: 20px;
+                transform: rotate(45deg);
+                
+                &:before {
+                    transition: transform .1s linear;
+                    transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
+                    width: 200%;
+                }
+
+                &:after {
+                    transition: transform .1s linear;
+                    transform: rotate(-90deg) translateY(9px) translateX(5px);
+                }
+            }
         }
         
         &__list {
             display: flex;
             flex-direction: column;
             position: absolute;
-            justify-content: flex-start;
-            margin-top: 20%;
-            right: 0;
-            margin-right: -200%;
+            margin-top: 120px;
+            transform: translateX(1000px);
             transition: all .3s linear;
-            width: 100%;
+            min-width: 90%;
                         
 
             &--open {
-                display: flex;
-                margin-right: 0;
+                // margin-right: 0;
+                transform: translateX(0);
                 transition: all .3s linear;
             }
         }
 
         &__item {
+            border-radius: 20px;
+            margin-top: 1%;
             background-color: #FFF;
             opacity: 0.6;
             font-size: 2em;
@@ -70,14 +118,29 @@
                 
             }
         }
+
+        &__link {
+            width: 100%;
+
+            &:hover {
+                color: #fff;
+                background-color: #64c29e;
+                border-radius: inherit;
+            }
+        }
+
+        &__scrollCointainer {
+            width: 90%;
+        }
     }
-    
+
     .work {
 
         &__image {
             flex: 1;
         }
     }
+
 }
 
 @media #{$small} {  // Small 720px
