@@ -139,6 +139,18 @@
 /*----------  Mini 450px  ----------*/
 @media #{$mini} {
 
+    .header {
+        &__scrollContainer {
+            display: none;
+        }
+    }
+
+    .contact {
+        &__email {
+            width: 100%;
+        }
+    }
+
     .footer {
         flex-direction: column;
 
@@ -149,12 +161,6 @@
 
         &__col--social {
             order: -1;
-        }
-    }
-
-    .header {
-        &__scrollContainer {
-            display: none;
         }
     }
 }
