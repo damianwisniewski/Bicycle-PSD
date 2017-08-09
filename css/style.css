@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/**
+ *
+ 
+ Bicycle PSD downloaded form: 
+ https://freebiesbug.com/psd-freebies/bicycle-flat-one-page-template/ 
+ PSD designed by Yebo.
+ Coded by: Damian Wiśniewski
+ 
+ * 
+ **/
 /*=============================================
 =                  Reset CSS                  =
 =============================================*/
@@ -72,6 +83,7 @@ html, body {
   text-align: center;
   position: relative;
   /*----------  Navigation  ----------*/
+  /*----------  Scroll down button  ----------*/
 }
 .header__nav {
   max-width: 800px;
@@ -160,7 +172,7 @@ html, body {
   height: 45px;
   border-radius: 40%;
   outline: none;
-  border: 2px solid #4d4959;
+  border: 2px solid #282f35;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
@@ -185,9 +197,7 @@ html, body {
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 100;
 }
-
 @-webkit-keyframes scroll {
   0% {
     -webkit-transform: translateY(-60px);
@@ -215,7 +225,6 @@ html, body {
     opacity: 0;
   }
 }
-
 @keyframes scroll {
   0% {
     -webkit-transform: translateY(-60px);
@@ -303,12 +312,12 @@ html, body {
   margin: 0 5px;
   width: 15px;
   height: 15px;
-  border: 1px solid #94979a;
+  border: 1px solid #929292;
   border-radius: 50%;
   outline: none;
 }
 .twitter__buttons:hover, .twitter__buttons--selected {
-  background-color: #94979a;
+  background-color: #929292;
 }
 
 /*=====  End of ABOUT and TWITTER   ======*/
@@ -328,6 +337,7 @@ html, body {
   overflow: hidden;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  /*----------  slyles for scroll animation  ----------*/
 }
 .work__image {
   display: -webkit-box;
@@ -555,12 +565,13 @@ html, body {
   display: flex;
   width: 100%;
   background-color: #282f35;
+  /*----------  Enter shop button  ----------*/
 }
 .enter__btn {
   margin: 4% auto;
   width: 250px;
   background-color: transparent;
-  border: 1px solid #94979a;
+  border: 1px solid #929292;
   padding: 0;
 }
 .enter__link {
@@ -574,13 +585,13 @@ html, body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 5% 10%;
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .enter__link:hover {
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
-  background-color: #94979a;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-color: #929292;
   color: #282f35;
 }
 
@@ -619,7 +630,7 @@ html, body {
   padding: 15px;
   font-style: italic;
   color: #929292;
-  font-size: 0.9em;
+  font-size: 0.85em;
   border: 1px solid #929292;
 }
 .contact__btn {
@@ -716,8 +727,8 @@ html, body {
   border: none;
   outline: none;
   background-color: rgba(100, 194, 158, 0.75);
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   cursor: pointer;
 }
 .footer__scrollTop:after {
@@ -731,12 +742,12 @@ html, body {
 }
 .footer__scrollTop:before {
   content: "";
-  width: 19px;
+  width: 20px;
   height: 5px;
   background-color: #fff;
   position: absolute;
-  -webkit-transform: rotate(47deg) translateX(-5px) translateY(0px);
-          transform: rotate(47deg) translateX(-5px) translateY(0px);
+  -webkit-transform: rotate(47deg) translateX(-6px) translateY(0px);
+          transform: rotate(47deg) translateX(-6px) translateY(0px);
 }
 .footer__scrollTop--hidden {
   bottom: -20%;
@@ -748,18 +759,20 @@ html, body {
 /*=============================================
 =                MEDIA QUERIES                =
 =============================================*/
+/*----------  Large 1220px  ----------*/
 @media all and (max-width: 1220px) {
   .work__image--red {
     display: none;
   }
 }
+/*----------  Medium 950px  ----------*/
 @media all and (max-width: 950px) {
   .header {
     overflow: hidden;
     background: url(../img/images/background-smaller.jpg) no-repeat center;
     background-size: cover;
-    /*----------  Navigation  ----------*/
-    /*----------  HAMBURGER  ----------*/
+    /*----------  HAMBURGER BUTTON ----------*/
+    /*----------  Navigation List ----------*/
   }
   .header__nav {
     display: -webkit-box;
@@ -798,10 +811,10 @@ html, body {
     outline: none;
     background-color: transparent;
     border-top: 5px solid #64c29e;
-    -webkit-transition: -webkit-transform .1s linear;
-    transition: -webkit-transform .1s linear;
-    transition: transform .1s linear;
-    transition: transform .1s linear, -webkit-transform .1s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
   }
   .header__button:before {
     content: "";
@@ -811,10 +824,10 @@ html, body {
     width: 100%;
     border-top: 5px solid #64c29e;
     position: absolute;
-    -webkit-transition: -webkit-transform .1s linear;
-    transition: -webkit-transform .1s linear;
-    transition: transform .1s linear;
-    transition: transform .1s linear, -webkit-transform .1s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
   }
   .header__button:after {
     content: "";
@@ -826,34 +839,34 @@ html, body {
     position: absolute;
     -webkit-transform: translateY(12px);
             transform: translateY(12px);
-    -webkit-transition: -webkit-transform .1s linear;
-    transition: -webkit-transform .1s linear;
-    transition: transform .1s linear;
-    transition: transform .1s linear, -webkit-transform .1s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
   }
   .header__button--used {
-    -webkit-transition: -webkit-transform .1s linear;
-    transition: -webkit-transform .1s linear;
-    transition: transform .1s linear;
-    transition: transform .1s linear, -webkit-transform .1s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
     width: 20px;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }
   .header__button--used:before {
-    -webkit-transition: -webkit-transform .1s linear;
-    transition: -webkit-transform .1s linear;
-    transition: transform .1s linear;
-    transition: transform .1s linear, -webkit-transform .1s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
     -webkit-transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
             transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
     width: 200%;
   }
   .header__button--used:after {
-    -webkit-transition: -webkit-transform .1s linear;
-    transition: -webkit-transform .1s linear;
-    transition: transform .1s linear;
-    transition: transform .1s linear, -webkit-transform .1s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
     -webkit-transform: rotate(-90deg) translateY(9px) translateX(5px);
             transform: rotate(-90deg) translateY(9px) translateX(5px);
   }
@@ -870,15 +883,15 @@ html, body {
     margin-bottom: 60px;
     -webkit-transform: translateX(1000px);
             transform: translateX(1000px);
-    -webkit-transition: all .3s linear;
-    transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     min-width: 90%;
   }
   .header__list--open {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    -webkit-transition: all .3s linear;
-    transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   .header__item {
     border-radius: 20px;
@@ -911,6 +924,7 @@ html, body {
             flex: 1;
   }
 }
+/*----------  Small 720px  ----------*/
 @media all and (max-width: 720px) {
   .footer__col--social {
     -webkit-box-ordinal-group: 2;
@@ -959,6 +973,7 @@ html, body {
         flex-basis: 170px;
   }
 }
+/*----------  Mini 450px  ----------*/
 @media all and (max-width: 450px) {
   .footer {
     -webkit-box-orient: vertical;

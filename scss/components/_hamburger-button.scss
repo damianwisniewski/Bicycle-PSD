@@ -1,0 +1,50 @@
+&__button {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    align-self: center;
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-top: 5px solid $green-color;
+    @include transition ($elements: transform, $speed: 0.1s);
+
+    &:before {
+        content: "";
+        display: flex;
+        width: 100%;
+        border-top: 5px solid $green-color;
+        position: absolute;
+        @include transition ($elements: transform, $speed: 0.1s);
+    }
+
+    &:after {
+        content: "";
+        display: flex;
+        width: 100%;
+        border-top: 5px solid $green-color;
+        position: absolute;
+        transform: translateY(12px);
+        @include transition ($elements: transform, $speed: 0.1s);
+    }
+
+    &--used {
+        @include transition ($elements: transform, $speed: 0.1s);
+        width: 20px;
+        transform: rotate(45deg);
+                
+        &:before {
+            @include transition ($elements: transform, $speed: 0.1s);
+            transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
+            width: 200%;
+        }
+
+        &:after {
+            @include transition ($elements: transform, $speed: 0.1s);
+            transform: rotate(-90deg) translateY(9px) translateX(5px);
+        }
+    }
+}

@@ -1,6 +1,19 @@
-@import "_mixins.scss";
-@import "_variables.scss";
-@import "_reset.scss";
+
+/**
+ *
+ 
+ Bicycle PSD downloaded form: 
+ https://freebiesbug.com/psd-freebies/bicycle-flat-one-page-template/ 
+ PSD designed by Yebo.
+ Coded by: Damian Wiśniewski
+ 
+ * 
+ **/
+
+
+@import "helpers/_mixins.scss";
+@import "helpers/_variables.scss";
+@import "base/_reset.scss";
 
 html, body {
     height: 100%;
@@ -59,8 +72,7 @@ html, body {
             background-color: #000;
             position: relative;
             left: -50px;
-            top: 10px;
-            
+            top: 10px;   
         }
     }
 
@@ -71,59 +83,13 @@ html, body {
         color: $menu-font-color;
 
         &:hover {
-            color: $hover-color;
+            color: $green-color;
         }
     }
-
-    &__scrollContainer{
-        position: absolute;
-        bottom: 30px;
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__scrollBtn {
-        display: block;
-        width: 25px;
-        height: 45px;
-        border-radius: 40%;
-        outline: none;
-        border: 2px solid #4d4959;
-        background-color: #fff;
-        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75);
-        overflow: hidden;
-        padding: 0;
-
-        &:after {
-            content: "";
-            display: block;
-            margin: auto;
-            width: 7px;
-            height: 15px;
-            border-radius: 40%;
-            background-color: #64c29e;
-            transform: translateY(-60px);
-            animation: scroll 1.5s linear infinite;
-        }
-    }
-
-    &__scrollLink {
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        z-index: 100;
-    }
-}
-
-@keyframes scroll {
-    0% { transform: translateY(-60px); opacity: 0.5;}
-    25% {transform: translateY(-50px); opacity: 0.75;}
-    50% {transform: translateY(-40px); opacity: 1;}
-    75% {transform: translateY(-30px); opacity: 0.75;}
-    100% { transform: translateY(0px); opacity: 0;}
+    
+    /*----------  Scroll down button  ----------*/
+    @import "components/_scroll-down-button.scss";
+    
 }
 
 /*=====  End of HEADER  ======*/
@@ -178,12 +144,12 @@ html, body {
         margin: 0 5px;
         width: 15px;
         height: 15px;
-        border: 1px solid #94979a;
+        border: 1px solid $gray-color;
         border-radius: 50%;
         outline: none;
         
         &:hover, &--selected {
-            background-color: #94979a;
+            background-color: $gray-color;
         }
     }
 }
@@ -271,6 +237,8 @@ html, body {
         width: 100%;
     }
 
+    
+    /*----------  slyles for scroll animation  ----------*/
     &__hiddenRight {
         transform: translateX(1000px);
     }
@@ -285,7 +253,7 @@ html, body {
 
     &__show {
         transform: translateX(0) scale(1, 1);
-        transition: transform 0.5s ease-in-out;
+        @include transition($elements: transform, $speed: 0.5s, $easing: ease-in-out);
     }
 }
 
@@ -324,7 +292,7 @@ html, body {
         overflow: hidden;
 
         &:hover > .shop__link {
-            transition: opacity 0.4s linear;
+            @include transition($elements: opacity, $speed: 0.4s);
             opacity: 0.85;
         }
     }
@@ -336,7 +304,7 @@ html, body {
 
     &__link {
         position: absolute;
-        background-color: $hover-color;
+        background-color: $green-color;
         opacity: 0.85;
         width: 100%;
         height: 100%;
@@ -347,7 +315,7 @@ html, body {
         text-decoration: none;
         color: #fff;
         opacity: 0;
-        transition: opacity 0.4s linear;
+        @include transition($elements: opacity, $speed: 0.4s);
     }
 
 }
@@ -362,31 +330,12 @@ html, body {
 .enter {
     display: flex;
     width: 100%;
-    background-color: $enter-shop-bg;
+    background-color: $dark-color;
 
-    &__btn {
-        margin: 4% auto;
-        width: 250px;
-        background-color: transparent;
-        border: 1px solid $enter-shop-btn;
-        padding: 0;
-    }
-
-    &__link {
-        display: flex;
-        letter-spacing: 1px;
-        color: #fff;
-        text-decoration: none;
-        justify-content: center;
-        padding: 5% 10%;
-        transition: all .3s linear;
-
-        &:hover {
-            transition: all .3s linear;
-            background-color: $enter-shop-btn;
-            color: $enter-shop-bg;
-        }
-    }
+    
+    /*----------  Enter shop button  ----------*/
+    @import "components/enter-shop-button.scss";
+    
 }
 
 /*=====  End of ENTER SHOP  ======*/
@@ -404,7 +353,7 @@ html, body {
         margin: 2%;
         color: $content-font-color;
         font-style: italic;
-        font-size: 1.3em;
+        font-size: $big-font;
     }
 
     &__form {
@@ -416,17 +365,17 @@ html, body {
         width: 250px;
         padding: 15px;
         font-style: italic;
-        color: #929292;
-        font-size: 0.9em;
-        border: 1px solid #929292;
+        color: $gray-color;
+        font-size: $small-font;
+        border: 1px solid $gray-color;
     }
 
     &__btn {
         color: #fff;
-        background-color: $hover-color;
+        background-color: $green-color;
         border: none;
         width: 70px;
-        font-size: 1.3em;
+        font-size: $big-font;
         font-weight: 300;
         margin-left: 5px; 
     }
@@ -478,13 +427,13 @@ html, body {
 
     &__item {
         margin: 7px;
-        font-size: 0.85em;
+        font-size: $small-font;
         color: $content-font-color;
         font-style: italic;
     }
 
     &__address { 
-        font-size: 0.85em;
+        font-size: $small-font;
         color: $content-font-color;
 
         &--bold {
@@ -494,47 +443,11 @@ html, body {
     
 
     /*----------  Scroll top Button  ----------*/
-    
-    &__scrollTop {
-        position: fixed;
-        bottom: 2%;
-        right: 2%;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: none;
-        outline: none;
-        background-color: rgba(100, 194, 158, 0.75);
-        transition: all 0.5s ease-out;
-        cursor: pointer;
-
-        &:after {
-            content: "";
-            width: 20px;
-            height: 5px;
-            background-color: #fff;
-            position: absolute;
-            transform: rotate(125deg) translateX(5px) translateY(15px)
-        }
-
-        &:before {
-            content: "";
-            width: 19px;
-            height: 5px;
-            background-color: #fff;
-            position: absolute;
-            transform: rotate(47deg) translateX(-5px) translateY(0px);
-        }
-        
-        &--hidden {
-            bottom: -20%;
-            transition: all 0.5s linear;
-        }
-    }
+    @import "components/_scroll-top-button.scss";
 }
 
 /*=====  End of FOOTER  ======*/
 
 
-@import "_queries.scss";
+@import "base/_queries.scss";
 
