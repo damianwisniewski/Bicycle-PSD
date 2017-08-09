@@ -975,6 +975,14 @@ html, body {
 }
 /*----------  Mini 450px  ----------*/
 @media all and (max-width: 450px) {
+  .header__scrollContainer {
+    display: none;
+  }
+
+  .contact__email {
+    width: 100%;
+  }
+
   .footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -989,10 +997,6 @@ html, body {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-  }
-
-  .header__scrollContainer {
-    display: none;
   }
 }
 /*=====  End of MEDIA QUERIES  ======*/
