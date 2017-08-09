@@ -13,7 +13,7 @@
 
 @mixin paragraph-style {
     color: $content-font-color;
-    font-size: 1em;
+    font-size: $normal-font;
     line-height: 1.8;
 }
 
@@ -28,4 +28,16 @@
 @mixin bg-image($image) {
     background: url(../img/images/#{$image}.jpg) no-repeat center;
     background-size: cover; 
+}
+
+@mixin arrow-in-button {
+    content: "";
+    width: 20px;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+}
+
+@mixin transition($elements: all, $speed: 0.5s, $easing: linear) {
+    transition: $elements $speed $easing;
 }

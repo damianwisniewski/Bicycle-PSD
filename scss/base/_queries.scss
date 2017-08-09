@@ -4,7 +4,8 @@
 =============================================*/
 
 
-@media #{$large} { // Large 1220px
+/*----------  Large 1220px  ----------*/
+@media #{$large} { 
     .work {
         &__image--red {
             display: none;
@@ -12,13 +13,13 @@
     }
 }
 
-@media #{$medium} { // Medium 950px
+/*----------  Medium 950px  ----------*/
+@media #{$medium} {
 
     .header {
         overflow: hidden;
         @include bg-image(background-smaller);
 
-        /*----------  Navigation  ----------*/
         &__nav {
             display: flex;
             min-width: min-content;
@@ -34,59 +35,10 @@
             position: static;
         }
 
-        /*----------  HAMBURGER  ----------*/
+        /*----------  HAMBURGER BUTTON ----------*/
+        @import "components/_hamburger-button.scss";
         
-        &__button {
-            display: flex;
-            position: relative;
-            align-items: flex-end;
-            align-self: center;
-            width: 40px;
-            height: 30px;
-            padding: 0;
-            border: none;
-            outline: none;
-            background-color: transparent;
-            border-top: 5px solid $hover-color;
-            transition: transform .1s linear;
-
-            &:before {
-                content: "";
-                display: flex;
-                width: 100%;
-                border-top: 5px solid $hover-color;
-                position: absolute;
-                transition: transform .1s linear;
-            }
-
-            &:after {
-                content: "";
-                display: flex;
-                width: 100%;
-                border-top: 5px solid $hover-color;
-                position: absolute;
-                transform: translateY(12px);
-                transition: transform .1s linear;
-            }
-
-            &--used {
-                transition: transform .1s linear;
-                width: 20px;
-                transform: rotate(45deg);
-                
-                &:before {
-                    transition: transform .1s linear;
-                    transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
-                    width: 200%;
-                }
-
-                &:after {
-                    transition: transform .1s linear;
-                    transform: rotate(-90deg) translateY(9px) translateX(5px);
-                }
-            }
-        }
-        
+        /*----------  Navigation List ----------*/
         &__list {
             display: flex;
             flex-direction: column;
@@ -94,13 +46,12 @@
             margin-top: 3%;
             margin-bottom: 60px;
             transform: translateX(1000px);
-            transition: all .3s linear;
+            @include transition ($speed: 0.3s);
             min-width: 90%;
                         
-
             &--open {
                 transform: translateX(0);
-                transition: all .3s linear;
+                @include transition ($speed: 0.3s);
             }
         }
 
@@ -109,14 +60,13 @@
             margin-top: 1%;
             background-color: #FFF;
             opacity: 0.6;
-            font-size: 2em;
+            font-size: $huge-font;
             font-weight: bold;
             margin-right: 0;
             line-height: 2em;
 
             &:nth-child(even):before {
-                display: none;
-                
+                display: none;  
             }
         }
 
@@ -125,7 +75,7 @@
 
             &:hover {
                 color: #fff;
-                background-color: #64c29e;
+                background-color: $green-color;
                 border-radius: inherit;
             }
         }
@@ -144,7 +94,8 @@
 
 }
 
-@media #{$small} {  // Small 720px
+/*----------  Small 720px  ----------*/
+@media #{$small} { 
 
     .footer {
         &__col--social {
@@ -185,6 +136,7 @@
     }
 }
 
+/*----------  Mini 450px  ----------*/
 @media #{$mini} {
 
     .footer {
