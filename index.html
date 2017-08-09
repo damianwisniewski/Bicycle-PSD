@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
 </head>
+
 <body>
     <header id="head" class="header">
         <nav class="header__nav">
             <!-- LOGO -->
             <h1 class="header__logo">
-                <a href="#" class="header__link"><img src="img/logo/main_logo.png" alt="Bicycle logo"></a>
+                <img src="img/logo/main_logo.png" alt="Bicycle logo">
             </h1>
             <!-- NAVIGATION -->
+            <button id="hamburger" class="header__button"></button>
             <ul id="list" class="header__list">
                 <li class="header__item">
                     <a href="#about" class="header__link">ABOUT US</a>
@@ -31,7 +33,6 @@
                     <a href="#contact" class="header__link">CONTACT</a>
                 </li>
             </ul>
-            <button id="hamburger" class="header__button"></button>
         </nav>
         <div class="header__scrollContainer">
             <button id="scrollButton" class="header__scrollBtn">
@@ -39,6 +40,7 @@
             </button> 
         </div>
     </header>
+
     <main>
         <!-- ABOUT -->
         <section id="about" class="about">
@@ -177,6 +179,7 @@
             </form>
         </section>
     </main>
+
     <footer class="footer">
         <!-- address -->
         <section class="footer__col footer__col--start">
@@ -199,6 +202,7 @@
         </section>
         <button id="scrollTop" class="footer__scrollTop footer__scrollTop--hidden"></button>
     </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>

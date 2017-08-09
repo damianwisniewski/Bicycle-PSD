@@ -65,14 +65,13 @@ html, body {
 =                    HEADER                   =
 =============================================*/
 .header {
-  height: 100%;
+  min-height: 100%;
   background: url(../img/images/main_img.jpg) no-repeat center;
   background-size: cover;
   background-size: cover;
   text-align: center;
   position: relative;
   /*----------  Navigation  ----------*/
-  /*----------  HAMBURGER  ----------*/
 }
 .header__nav {
   max-width: 800px;
@@ -93,6 +92,7 @@ html, body {
   top: 35px;
 }
 .header__button {
+  /* Hamburger button - hidden */
   display: none;
 }
 .header__list {
@@ -769,6 +769,8 @@ html, body {
     min-width: -moz-min-content;
     min-width: min-content;
     max-width: none;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 100%;
     margin-top: 0;
     padding: 5%;
@@ -863,8 +865,9 @@ html, body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
-    margin-top: 120px;
+    position: relative;
+    margin-top: 3%;
+    margin-bottom: 60px;
     -webkit-transform: translateX(1000px);
             transform: translateX(1000px);
     -webkit-transition: all .3s linear;
@@ -971,6 +974,10 @@ html, body {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
+  }
+
+  .header__scrollContainer {
+    display: none;
   }
 }
 /*=====  End of MEDIA QUERIES  ======*/
