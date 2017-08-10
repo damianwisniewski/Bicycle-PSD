@@ -111,6 +111,7 @@ html, body {
 
     &__content {
         @include paragraph-style;
+        width: 100%;
         max-width: 1000px;
         display: flex;
     }
