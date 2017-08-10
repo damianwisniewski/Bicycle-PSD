@@ -288,6 +288,7 @@ html, body {
   color: #848789;
   font-size: 1em;
   line-height: 1.8;
+  width: 100%;
   max-width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -726,6 +727,7 @@ html, body {
 }
 .footer__scrollTop {
   position: fixed;
+  display: block;
   bottom: 2%;
   right: 2%;
   width: 50px;
@@ -739,22 +741,24 @@ html, body {
   cursor: pointer;
 }
 .footer__scrollTop:after {
+  display: block;
   content: "";
   width: 20px;
   height: 5px;
   background-color: #fff;
   position: absolute;
-  -webkit-transform: rotate(125deg) translateX(5px) translateY(15px);
-          transform: rotate(125deg) translateX(5px) translateY(15px);
+  -webkit-transform: rotate(125deg) translateX(-7px) translateY(0px);
+          transform: rotate(125deg) translateX(-7px) translateY(0px);
 }
 .footer__scrollTop:before {
+  display: block;
   content: "";
   width: 20px;
   height: 5px;
   background-color: #fff;
   position: absolute;
-  -webkit-transform: rotate(47deg) translateX(-6px) translateY(0px);
-          transform: rotate(47deg) translateX(-6px) translateY(0px);
+  -webkit-transform: rotate(47deg) translateX(6px) translateY(-14.5px);
+          transform: rotate(47deg) translateX(6px) translateY(-14.5px);
 }
 .footer__scrollTop--hidden {
   bottom: -20%;

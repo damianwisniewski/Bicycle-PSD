@@ -1,5 +1,6 @@
 &__scrollTop {
     position: fixed;
+    display: block;
     bottom: 2%;
     right: 2%;
     width: 50px;
@@ -12,13 +13,15 @@
     cursor: pointer;
 
     &:after {
+        display: block;
         @include arrow-in-button;
-        transform: rotate(125deg) translateX(5px) translateY(15px);
+        transform: rotate(125deg) translateX(-7px) translateY(0px);
     }
 
     &:before {
+        display: block;
         @include arrow-in-button;
-        transform: rotate(47deg) translateX(-6px) translateY(0px);
+        transform: rotate(47deg) translateX(6px) translateY(-14.5px);
     }
         
     &--hidden {
