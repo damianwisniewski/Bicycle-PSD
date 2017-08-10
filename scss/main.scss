@@ -43,10 +43,12 @@ html, body {
 
     &__logo {
         position: absolute;
-        top: 35px;
+        display: flex;
+        justify-content: center;
+        width: 800px;
+        top: 36px;
     }
-
-    
+ 
     &__button { /* Hamburger button - hidden */
         display: none;
     }
