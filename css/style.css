@@ -142,6 +142,9 @@ html, body {
 }
 .header__item:nth-child(even):before {
   content: " ";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 2px;
   height: 2px;
   background-color: #000;
@@ -287,6 +290,7 @@ html, body {
 .about__content, .twitter__content {
   color: #848789;
   font-size: 1em;
+  width: 100%;
   line-height: 1.8;
   width: 100%;
   max-width: 1000px;
@@ -303,6 +307,9 @@ html, body {
   font-weight: normal;
   color: #848789;
   text-transform: lowercase;
+}
+.twitter__slider {
+  width: 100%;
 }
 .twitter__slide {
   display: none;
@@ -345,6 +352,7 @@ html, body {
   overflow: hidden;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
   /*----------  slyles for scroll animation  ----------*/
 }
 .work__image {
@@ -421,6 +429,12 @@ html, body {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+.work__logo {
+  width: 32px;
+}
+.work__logo--smaller {
+  width: 23px;
+}
 .work__header {
   text-transform: uppercase;
   color: #353738;
@@ -433,6 +447,7 @@ html, body {
 .work__content {
   color: #848789;
   font-size: 1em;
+  width: 100%;
   line-height: 1.8;
 }
 .work__content:after {
@@ -526,7 +541,6 @@ html, body {
           align-items: center;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 .shop__cell:hover > .shop__link {
   -webkit-transition: opacity 0.4s linear;
@@ -539,6 +553,7 @@ html, body {
 }
 .shop__link {
   position: absolute;
+  top: 0;
   background-color: #64c29e;
   opacity: 0.85;
   width: 100%;
@@ -956,8 +971,8 @@ html, body {
             order: -1;
   }
   .work__info {
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 
   .shop {
