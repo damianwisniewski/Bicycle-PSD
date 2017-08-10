@@ -541,6 +541,7 @@ html, body {
           align-items: center;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 .shop__cell:hover > .shop__link {
   -webkit-transition: opacity 0.4s linear;
@@ -587,11 +588,12 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  padding: 4%;
   background-color: #282f35;
   /*----------  Enter shop button  ----------*/
 }
 .enter__btn {
-  margin: 4% auto;
+  margin: auto;
   width: 250px;
   background-color: transparent;
   border: 1px solid #929292;
@@ -701,8 +703,8 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 50px;
+          flex: 1 1 50px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -726,6 +728,7 @@ html, body {
 }
 .footer__col--social {
   min-width: 300px;
+  width: 100%;
 }
 .footer__item {
   margin: 7px;
