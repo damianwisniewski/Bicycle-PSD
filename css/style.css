@@ -101,7 +101,14 @@ html, body {
 }
 .header__logo {
   position: absolute;
-  top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 800px;
+  top: 36px;
 }
 .header__button {
   /* Hamburger button - hidden */
@@ -778,9 +785,7 @@ html, body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    min-width: -webkit-min-content;
-    min-width: -moz-min-content;
-    min-width: min-content;
+    min-width: 0;
     max-width: none;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -793,11 +798,13 @@ html, body {
   }
   .header__logo {
     position: static;
+    width: 50%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .header__button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     position: relative;
     -webkit-box-align: end;
         -ms-flex-align: end;
@@ -815,15 +822,16 @@ html, body {
     transition: -webkit-transform 0.1s linear;
     transition: transform 0.1s linear;
     transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+    overflow: visible;
   }
   .header__button:before {
     content: "";
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     width: 100%;
     border-top: 5px solid #64c29e;
     position: absolute;
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
     -webkit-transition: -webkit-transform 0.1s linear;
     transition: -webkit-transform 0.1s linear;
     transition: transform 0.1s linear;
@@ -831,9 +839,7 @@ html, body {
   }
   .header__button:after {
     content: "";
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     width: 100%;
     border-top: 5px solid #64c29e;
     position: absolute;
@@ -858,8 +864,8 @@ html, body {
     transition: -webkit-transform 0.1s linear;
     transition: transform 0.1s linear;
     transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-    -webkit-transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
-            transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
+    -webkit-transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
+            transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
     width: 200%;
   }
   .header__button--used:after {
@@ -867,8 +873,8 @@ html, body {
     transition: -webkit-transform 0.1s linear;
     transition: transform 0.1s linear;
     transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-    -webkit-transform: rotate(-90deg) translateY(9px) translateX(5px);
-            transform: rotate(-90deg) translateY(9px) translateX(5px);
+    -webkit-transform: rotate(-90deg) translateY(8.5px) translateX(10px);
+            transform: rotate(-90deg) translateY(8.5px) translateX(10px);
   }
   .header__list {
     display: -webkit-box;

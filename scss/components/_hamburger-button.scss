@@ -1,5 +1,5 @@
 &__button {
-    display: flex;
+    display: block;
     position: relative;
     align-items: flex-end;
     align-self: center;
@@ -11,19 +11,21 @@
     background-color: transparent;
     border-top: 5px solid $green-color;
     @include transition ($elements: transform, $speed: 0.1s);
+    overflow: visible;
 
     &:before {
         content: "";
-        display: flex;
+        display: block;
         width: 100%;
         border-top: 5px solid $green-color;
         position: absolute;
+        transform: translateY(-2px);
         @include transition ($elements: transform, $speed: 0.1s);
     }
 
     &:after {
         content: "";
-        display: flex;
+        display: block;
         width: 100%;
         border-top: 5px solid $green-color;
         position: absolute;
@@ -38,13 +40,13 @@
                 
         &:before {
             @include transition ($elements: transform, $speed: 0.1s);
-            transform: rotate(-45deg) translateY(-10.5px) translateX(-13px);
+            transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
             width: 200%;
         }
 
         &:after {
             @include transition ($elements: transform, $speed: 0.1s);
-            transform: rotate(-90deg) translateY(9px) translateX(5px);
+            transform: rotate(-90deg) translateY(8.5px) translateX(10px);
         }
     }
 }
