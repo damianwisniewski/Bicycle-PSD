@@ -10,10 +10,9 @@
  * 
  **/
 
-
+@import "base/_reset.scss";
 @import "helpers/_mixins.scss";
 @import "helpers/_variables.scss";
-@import "base/_reset.scss";
 
 html, body {
     height: 100%;
@@ -69,6 +68,7 @@ html, body {
 
         &:nth-child(even):before {
             content: " ";
+            display: flex;
             width: 2px;
             height: 2px;
             background-color: #000;
@@ -130,6 +130,10 @@ html, body {
         text-transform: lowercase;
     }
 
+    &__slider {
+        width: 100%;
+    }
+
     &__slide {
         display: none;
 
@@ -169,6 +173,7 @@ html, body {
     @include flexbox-inline;
     overflow: hidden;
     flex-wrap: wrap;
+    width: 100%;
 
     &__image {
         display: flex;
@@ -214,6 +219,14 @@ html, body {
             z-index: 1000;
             bottom: -5px;
             transform: rotate(45deg);
+        }
+    }
+
+    &__logo {
+        width: 32px;
+
+        &--smaller{
+            width: 23px;
         }
     }
 
@@ -292,7 +305,7 @@ html, body {
         align-items: center;
         text-align: center;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
 
         &:hover > .shop__link {
             @include transition($elements: opacity, $speed: 0.4s);
@@ -307,6 +320,7 @@ html, body {
 
     &__link {
         position: absolute;
+        top: 0;
         background-color: $green-color;
         opacity: 0.85;
         width: 100%;

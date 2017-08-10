@@ -14,6 +14,7 @@
 @mixin paragraph-style {
     color: $content-font-color;
     font-size: $normal-font;
+    width: 100%;
     line-height: 1.8;
 }
 
