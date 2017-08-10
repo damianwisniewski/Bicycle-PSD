@@ -1,2 +1,2 @@
 # Bicycle-PSD
-HTML to PSD
+PSD to HTML
