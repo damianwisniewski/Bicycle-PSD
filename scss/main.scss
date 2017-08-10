@@ -305,7 +305,7 @@ html, body {
         align-items: center;
         text-align: center;
         position: relative;
-        // overflow: hidden;
+        overflow: hidden;
 
         &:hover > .shop__link {
             @include transition($elements: opacity, $speed: 0.4s);
@@ -347,6 +347,7 @@ html, body {
 .enter {
     display: flex;
     width: 100%;
+    padding: 4%;
     background-color: $dark-color;
 
     
@@ -424,7 +425,7 @@ html, body {
 
     &__col {
         display: flex;
-        flex: 1;
+        flex: 1 1 50px;
         flex-direction: row;
         align-self: center;
         justify-content: center;
@@ -439,6 +440,7 @@ html, body {
 
         &--social {
             min-width: 300px;
+            width: 100%;
         }
     }
 
