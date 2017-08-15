@@ -111,6 +111,7 @@ html, body {
 
     &__content {
         @include paragraph-style;
+        margin: auto;
         width: 100%;
         max-width: 1000px;
         display: flex;
@@ -177,7 +178,7 @@ html, body {
 
     &__image {
         display: flex;
-        flex: 2;
+        flex: 2 2 300px;
         @include bg-image(other);
         align-items: center;
         justify-content: center;
@@ -189,46 +190,39 @@ html, body {
 
     &__image--frame {
         @include bg-image(red-frame);
-        flex: 1;
+        flex: 1 1 300px;
     }
 
     &__image--red {
         @include bg-image(red-bike);
-        flex: 1;
+        flex: 1 1 300px;
     }
 
     &__info {
         display: flex;
         flex-direction: column;
-        flex: 1;
+        flex: 1 1 300px;
     }
 
     &__article {
         @include article-style;
-        text-align: justify;
-        padding: 10%;
-        position: relative;
+        padding: 2em 10%;
 
         &:after {
             content: "";
             display: block;
             width: 30px;
             height: 30px;
-            position: absolute;
+            position: relative;
+            align-self: center;
             background-color: #fff;
             z-index: 1000;
-            bottom: -5px;
+            bottom: -40px;
+            margin: auto;
             transform: rotate(45deg);
         }
     }
 
-    &__logo {
-        width: 32px;
-
-        &--smaller{
-            width: 23px;
-        }
-    }
 
     &__header {
         @include h2-style;
@@ -238,6 +232,7 @@ html, body {
 
     &__content {
         @include paragraph-style;
+        text-align: justify;
 
         &:after {
             content: "";
@@ -246,6 +241,8 @@ html, body {
             border-bottom: 1px solid $content-font-color;
             margin: auto;
             margin-top: 7%;
+            position: relative;
+            z-index: 1100;
         }
     }
 
@@ -287,7 +284,7 @@ html, body {
     
     &__large {
         display: flex;
-        flex: 2;
+        flex: 2 1 300px;
         align-items: center;
         text-align: center;
         flex-direction: column;
@@ -301,11 +298,15 @@ html, body {
     &__cell {        
         width: 100%;
         display: flex;
-        flex: 1;
+        flex: 1 1;
         align-items: center;
         text-align: center;
         position: relative;
         overflow: hidden;
+
+        &--big {
+            flex: 1 1 150px;
+        }
 
         &:hover > .shop__link {
             @include transition($elements: opacity, $speed: 0.4s);
@@ -368,7 +369,7 @@ html, body {
     padding: 5%;
 
     &__header {
-        margin: 2%;
+        margin: 1em;
         color: $content-font-color;
         font-style: italic;
         font-size: $big-font;
