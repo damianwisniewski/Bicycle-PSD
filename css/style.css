@@ -267,9 +267,6 @@ html, body {
 =              ABOUT and TWITTER              =
 =============================================*/
 .about, .twitter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -285,13 +282,14 @@ html, body {
   color: #353738;
   font-weight: bold;
   letter-spacing: 0.1em;
-  margin: 1.5%;
+  margin: 1em;
 }
 .about__content, .twitter__content {
   color: #848789;
   font-size: 1em;
   width: 100%;
   line-height: 1.8;
+  margin: auto;
   width: 100%;
   max-width: 1000px;
   display: -webkit-box;
@@ -360,8 +358,8 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+      -ms-flex: 2 2 300px;
+          flex: 2 2 300px;
   background: url(../img/images/other.jpg) no-repeat center;
   background-size: cover;
   -webkit-box-align: center;
@@ -379,15 +377,15 @@ html, body {
   background: url(../img/images/red-frame.jpg) no-repeat center;
   background-size: cover;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
 }
 .work__image--red {
   background: url(../img/images/red-bike.jpg) no-repeat center;
   background-size: cover;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
 }
 .work__info {
   display: -webkit-box;
@@ -398,13 +396,10 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
 }
 .work__article {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -413,34 +408,29 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  text-align: justify;
-  padding: 10%;
-  position: relative;
+  padding: 2em 10%;
 }
 .work__article:after {
   content: "";
   display: block;
   width: 30px;
   height: 30px;
-  position: absolute;
+  position: relative;
+  -ms-flex-item-align: center;
+      align-self: center;
   background-color: #fff;
   z-index: 1000;
-  bottom: -5px;
+  bottom: -40px;
+  margin: auto;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-}
-.work__logo {
-  width: 32px;
-}
-.work__logo--smaller {
-  width: 23px;
 }
 .work__header {
   text-transform: uppercase;
   color: #353738;
   font-weight: bold;
   letter-spacing: 0.1em;
-  margin: 1.5%;
+  margin: 1em;
   margin-top: 7%;
   margin-bottom: 3%;
 }
@@ -449,6 +439,7 @@ html, body {
   font-size: 1em;
   width: 100%;
   line-height: 1.8;
+  text-align: justify;
 }
 .work__content:after {
   content: "";
@@ -457,6 +448,8 @@ html, body {
   border-bottom: 1px solid #848789;
   margin: auto;
   margin-top: 7%;
+  position: relative;
+  z-index: 1100;
 }
 .work__example {
   width: 100%;
@@ -505,8 +498,8 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+      -ms-flex: 2 1 300px;
+          flex: 2 1 300px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -534,14 +527,19 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+.shop__cell--big {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 150px;
+          flex: 1 1 150px;
 }
 .shop__cell:hover > .shop__link {
   -webkit-transition: opacity 0.4s linear;
@@ -625,9 +623,6 @@ html, body {
 =                   MAILING                   =
 =============================================*/
 .contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -639,7 +634,7 @@ html, body {
   padding: 5%;
 }
 .contact__header {
-  margin: 2%;
+  margin: 1em;
   color: #848789;
   font-style: italic;
   font-size: 1.3em;
@@ -907,7 +902,7 @@ html, body {
         -ms-flex-direction: column;
             flex-direction: column;
     position: relative;
-    margin-top: 3%;
+    margin-top: 1.2em;
     margin-bottom: 60px;
     -webkit-transform: translateX(1000px);
             transform: translateX(1000px);
@@ -923,7 +918,7 @@ html, body {
   }
   .header__item {
     border-radius: 20px;
-    margin-top: 1%;
+    margin-top: 0.8em;
     background-color: #FFF;
     opacity: 0.6;
     font-size: 2em;
@@ -948,8 +943,8 @@ html, body {
 
   .work__image {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+        -ms-flex: 1 1 300px;
+            flex: 1 1 300px;
   }
 }
 /*----------  Small 720px  ----------*/
@@ -977,29 +972,6 @@ html, body {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-
-  .shop {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .shop__large {
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-  .shop__cell--big {
-    -ms-flex-preferred-size: 170px;
-        flex-basis: 170px;
-  }
 }
 /*----------  Mini 450px  ----------*/
 @media all and (max-width: 450px) {
@@ -1011,6 +983,12 @@ html, body {
     width: 100%;
   }
 
+  .shop__cell--big {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 130px;
+            flex: 1 1 130px;
+  }
+
   .footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1019,7 +997,7 @@ html, body {
   }
   .footer__col {
     text-align: center;
-    margin: 5% 0;
+    margin: 1em 0;
   }
   .footer__col--social {
     -webkit-box-ordinal-group: 0;

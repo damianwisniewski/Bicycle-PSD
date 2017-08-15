@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            margin-top: 3%;
+            margin-top: 1.2em;
             margin-bottom: 60px;
             transform: translateX(1000px);
             @include transition ($speed: 0.3s);
@@ -59,7 +59,7 @@
 
         &__item {
             border-radius: 20px;
-            margin-top: 1%;
+            margin-top: 0.8em;
             background-color: #FFF;
             opacity: 0.6;
             font-size: $huge-font;
@@ -90,7 +90,7 @@
     .work {
 
         &__image {
-            flex: 1;
+            flex: 1 1 300px;
         }
     }
 
@@ -122,20 +122,6 @@
             flex-basis: 100%; 
         }
     }
-
-    .shop {
-        @include flexbox-inline;
-        width: 100%;
-        flex-wrap: wrap;
-        
-        &__large {
-            flex-basis: auto;
-        }
-
-        &__cell--big {
-            flex-basis: 170px;
-        }
-    }
 }
 
 /*----------  Mini 450px  ----------*/
@@ -153,12 +139,18 @@
         }
     }
 
+    .shop {
+        &__cell--big {
+            flex: 1 1 130px;
+        }
+    }
+
     .footer {
         flex-direction: column;
 
         &__col {
             text-align: center;
-            margin: 5% 0;
+            margin: 1em 0;
         }
 
         &__col--social {
