@@ -1,0 +1,98 @@
+/*----------  WORK  ----------*/
+.work {
+    @include flexbox-inline;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__image {
+        display: flex;
+        flex: 2 2 300px;
+        @include bg-image(other);
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__image--dark {
+        @include bg-image(dark-bike);
+    }
+
+    &__image--frame {
+        @include bg-image(red-frame);
+        flex: 1 1 300px;
+    }
+
+    &__image--red {
+        @include bg-image(red-bike);
+        flex: 1 1 300px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 300px;
+    }
+
+    &__article {
+        @include article-style;
+        padding: 2em 10%;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            align-self: center;
+            background-color: #fff;
+            z-index: 1000;
+            bottom: -40px;
+            margin: auto;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__header {
+        @include h2-style;
+        margin-top: 7%;
+        margin-bottom: 3%;
+    }
+
+    &__content {
+        @include paragraph-style;
+        text-align: justify;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 40px;
+            border-bottom: 1px solid $content-font-color;
+            margin: auto;
+            margin-top: 7%;
+            position: relative;
+            z-index: 1100;
+        }
+    }
+
+    &__example {
+        width: 100%;
+    }
+
+    /*----------  slyles for scroll animation  ----------*/
+    &__hiddenRight {
+        transform: translateX(1000px);
+    }
+
+    &__hiddenLeft {
+        transform: translateX(-1000px);
+    }
+
+    &__article--hidden {
+        transform: scale(0.2, 0.2);
+    }
+
+    &__show {
+        transform: translateX(0) scale(1, 1);
+        @include transition($elements: transform, $speed: 0.5s, $easing: ease-in-out);
+    }
+}

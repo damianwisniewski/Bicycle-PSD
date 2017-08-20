@@ -124,7 +124,7 @@ window.addEventListener("load", slider);
 var sliderButton = document.querySelectorAll("#button"); // dots under slider
 
 function selectSlide(e) { // changing slide after click on dot
-    if (e.target.hasAttribute("value")) {
+    if (e.target.hasAttribute("value") && !e.target.classList.contains("twitter__buttons--selected")) {
         index = parseInt(e.target.value);
         e.target.classList.add("twitter__buttons--selected");
         clearTimeout(fadeTimer);

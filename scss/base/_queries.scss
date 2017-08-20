@@ -37,8 +37,10 @@
             justify-content: flex-start;
         }
 
-        /*----------  HAMBURGER BUTTON ----------*/
-        @import "components/_hamburger-button.scss";
+        &__button {
+            display: block;
+        }
+
         
         /*----------  Navigation List ----------*/
         &__list {

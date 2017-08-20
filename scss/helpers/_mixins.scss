@@ -37,6 +37,7 @@
     height: 5px;
     background-color: #fff;
     position: absolute;
+    outline: none;
 }
 
 @mixin transition($elements: all, $speed: 0.5s, $easing: linear) {

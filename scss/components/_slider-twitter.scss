@@ -1,0 +1,45 @@
+/*----------  TWITTER - SLIDER  ----------*/
+.twitter {
+    
+    &__content {
+        font-style: italic;
+        margin: auto;
+    }
+    
+    &__time {
+        font-weight: normal;
+        color: $content-font-color;
+        text-transform: lowercase;
+    }
+    
+    &__slider {
+        width: 100%;
+    }
+    
+    &__slide {
+        display: none;
+
+        &--show {
+            display: block;
+        }
+    }
+    
+    &__buttonbox {
+        display: inline-flex;
+        margin-top: 30px;
+    }
+    
+    &__buttons {
+        margin: 0 5px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid $gray-color;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+        
+        &:hover, &--selected {
+            background-color: $gray-color;
+        }
+    }
+}

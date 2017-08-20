@@ -1,0 +1,17 @@
+/*----------  ABOUT AND TWITTER  ----------*/
+.about, .twitter {
+    @include article-style;
+    padding: 5%;
+
+    &__header {
+        @include h2-style;
+    }
+
+    &__content {
+        @include paragraph-style;
+        margin: auto;
+        width: 100%;
+        max-width: 1000px;
+        display: flex;
+    }
+}

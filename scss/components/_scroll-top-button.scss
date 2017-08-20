@@ -1,31 +1,38 @@
-&__scrollTop {
-    position: fixed;
-    display: block;
-    bottom: 2%;
-    right: 2%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    background-color: rgba(100, 194, 158, 0.75);
-    @include transition($easing: linear);
-    cursor: pointer;
-
-    &:after {
+/*----------  SCROLL TOP BUTTON  ----------*/
+.footer {
+    &__scrollTop {
+        position: fixed;
         display: block;
-        @include arrow-in-button;
-        transform: rotate(125deg) translateX(-7px) translateY(0px);
-    }
+        bottom: 2%;
+        right: 2%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        background-color: rgba(100, 194, 158, 0.75);
+        @include transition($easing: linear);
+        cursor: pointer;
 
-    &:before {
-        display: block;
-        @include arrow-in-button;
-        transform: rotate(47deg) translateX(6px) translateY(-14.5px);
+        &:after {
+            display: block;
+            @include arrow-in-button;
+            right: 50%;
+            top: 50%;
+            transform: rotate(135deg) translateX(-50%) translateX(20%);
+        }
+
+        &:before {
+            display: block;
+            @include arrow-in-button;
+            left: 50%;
+            top: 50%;
+            transform: rotate(45deg) translateX(-50%) translateX(20%);
+        }
+            
+        &--hidden {
+            bottom: -20%;
+            @include transition;
+        }
     }
-        
-    &--hidden {
-        bottom: -20%;
-        @include transition;
-    }
-}
+}    
