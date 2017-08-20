@@ -1,23 +1,27 @@
-&__btn {
-    margin: auto;
-    width: 250px;
-    background-color: transparent;
-    border: 1px solid $gray-color;
-    padding: 0;
-}
-
-&__link {
-    display: flex;
-    letter-spacing: 1px;
-    color: #fff;
-    text-decoration: none;
-    justify-content: center;
-    padding: 5% 10%;
-    @include transition($speed: 0.3s);
-
-    &:hover {
+/*----------  Enter shop button  ----------*/
+.enter {
+    &__btn {
+        width: 250px;
+        font-size: $small-font;
+        background-color: transparent;
+        border: 1px solid $gray-color;
+        display: flex;
+        letter-spacing: 1px;
+        color: #fff;
         @include transition($speed: 0.3s);
-        background-color: $gray-color;
-        color: $dark-color;
+        justify-content: center;
+        padding: 5% 10%;
+        cursor: pointer;
+        
+        &:hover {
+            @include transition($speed: 0.3s);
+            background-color: $gray-color;
+            color: $dark-color;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        margin: auto;
     }
 }

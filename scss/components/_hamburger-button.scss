@@ -1,52 +1,56 @@
-&__button {
-    display: block;
-    position: relative;
-    align-items: flex-end;
-    align-self: center;
-    width: 40px;
-    height: 30px;
-    padding: 0;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-top: 5px solid $green-color;
-    @include transition ($elements: transform, $speed: 0.1s);
-    overflow: visible;
-
-    &:before {
-        content: "";
-        display: block;
-        width: 100%;
-        border-top: 5px solid $green-color;
-        position: absolute;
-        transform: translateY(-2px);
-        @include transition ($elements: transform, $speed: 0.1s);
-    }
-
-    &:after {
-        content: "";
-        display: block;
-        width: 100%;
-        border-top: 5px solid $green-color;
-        position: absolute;
-        transform: translateY(12px);
-        @include transition ($elements: transform, $speed: 0.1s);
-    }
-
-    &--used {
-        @include transition ($elements: transform, $speed: 0.1s);
-        width: 20px;
-        transform: rotate(45deg);
-                
-        &:before {
+/*----------  HAMBURGER BUTTON ----------*/
+.header {
+        &__button {
+            display: none;
+            position: relative;
+            align-items: flex-end;
+            align-self: center;
+            width: 40px;
+            height: 30px;
+            padding: 0;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-top: 5px solid $green-color;
             @include transition ($elements: transform, $speed: 0.1s);
-            transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
-            width: 200%;
-        }
+            overflow: visible;
+            cursor: pointer;
 
-        &:after {
-            @include transition ($elements: transform, $speed: 0.1s);
-            transform: rotate(-90deg) translateY(8.5px) translateX(10px);
+            &:before {
+                content: "";
+                display: block;
+                width: 100%;
+                border-top: 5px solid $green-color;
+                position: absolute;
+                transform: translateY(-2px);
+                @include transition ($elements: transform, $speed: 0.1s);
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                border-top: 5px solid $green-color;
+                position: absolute;
+                transform: translateY(12px);
+                @include transition ($elements: transform, $speed: 0.1s);
+            }
+
+            &--used {
+                @include transition ($elements: transform, $speed: 0.1s);
+                width: 20px;
+                transform: rotate(45deg);
+                        
+                &:before {
+                    @include transition ($elements: transform, $speed: 0.1s);
+                    transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
+                    width: 200%;
+                }
+
+                &:after {
+                    @include transition ($elements: transform, $speed: 0.1s);
+                    transform: rotate(-90deg) translateY(8.5px) translateX(10px);
+                }
+            }
         }
     }
-}

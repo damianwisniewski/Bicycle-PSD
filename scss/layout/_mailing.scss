@@ -1,0 +1,48 @@
+/*----------  MAILING SECTION  ----------*/
+.contact {
+    @include article-style;
+    padding: 5%;
+
+    &__header {
+        margin: 1em;
+        color: $content-font-color;
+        font-style: italic;
+        font-size: $big-font;
+    }
+
+    &__form {
+        display: inline-flex;
+    }
+
+    &__email {
+        margin-left: 3px;
+        width: 250px;
+        padding: 15px;
+        font-style: italic;
+        color: $gray-color;
+        font-size: $small-font;
+        border: 1px solid $gray-color;
+    }
+
+    &__btn {
+        color: #fff;
+        background-color: $green-color;
+        border: none;
+        width: 70px;
+        font-size: $big-font;
+        font-weight: 300;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    &__visuallyHidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+}

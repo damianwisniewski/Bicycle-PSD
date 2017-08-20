@@ -73,8 +73,299 @@ html, body {
 }
 
 /*=============================================
-=                    HEADER                   =
+=                 COMPONENTS                  =
 =============================================*/
+/*----------  HAMBURGER BUTTON ----------*/
+.header__button {
+  display: none;
+  position: relative;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-top: 5px solid #64c29e;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  overflow: visible;
+  cursor: pointer;
+}
+.header__button:before {
+  content: "";
+  display: block;
+  width: 100%;
+  border-top: 5px solid #64c29e;
+  position: absolute;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+.header__button:after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-top: 5px solid #64c29e;
+  position: absolute;
+  -webkit-transform: translateY(12px);
+          transform: translateY(12px);
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+.header__button--used {
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  width: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.header__button--used:before {
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  -webkit-transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
+          transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
+  width: 200%;
+}
+.header__button--used:after {
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  -webkit-transform: rotate(-90deg) translateY(8.5px) translateX(10px);
+          transform: rotate(-90deg) translateY(8.5px) translateX(10px);
+}
+
+/*----------  SCROLL DOWN BUTTON  ----------*/
+.header__scrollContainer {
+  position: absolute;
+  bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__scrollBtn {
+  display: block;
+  width: 25px;
+  height: 45px;
+  border-radius: 40%;
+  outline: none;
+  border: 2px solid #282f35;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  padding: 0;
+}
+.header__scrollBtn:after {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 7px;
+  height: 15px;
+  border-radius: 40%;
+  background-color: #64c29e;
+  -webkit-animation: scroll 1.5s linear infinite;
+          animation: scroll 1.5s linear infinite;
+}
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0.5;
+  }
+  25% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0.75;
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+  75% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    opacity: 0.75;
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+}
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0.5;
+  }
+  25% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0.75;
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+  75% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    opacity: 0.75;
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+}
+/*----------  TWITTER - SLIDER  ----------*/
+.twitter__content {
+  font-style: italic;
+  margin: auto;
+}
+.twitter__time {
+  font-weight: normal;
+  color: #848789;
+  text-transform: lowercase;
+}
+.twitter__slider {
+  width: 100%;
+}
+.twitter__slide {
+  display: none;
+}
+.twitter__slide--show {
+  display: block;
+}
+.twitter__buttonbox {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-top: 30px;
+}
+.twitter__buttons {
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #929292;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+.twitter__buttons:hover, .twitter__buttons--selected {
+  background-color: #929292;
+}
+
+/*----------  Enter shop button  ----------*/
+.enter__btn {
+  width: 250px;
+  font-size: 0.85em;
+  background-color: transparent;
+  border: 1px solid #929292;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  letter-spacing: 1px;
+  color: #fff;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5% 10%;
+  cursor: pointer;
+}
+.enter__btn:hover {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-color: #929292;
+  color: #282f35;
+}
+.enter__link {
+  text-decoration: none;
+  margin: auto;
+}
+
+/*----------  SCROLL TOP BUTTON  ----------*/
+.footer__scrollTop {
+  position: fixed;
+  display: block;
+  bottom: 2%;
+  right: 2%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: rgba(100, 194, 158, 0.75);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+.footer__scrollTop:after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 5px;
+  background-color: #fff;
+  position: absolute;
+  outline: none;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: rotate(135deg) translateX(-50%) translateX(20%);
+          transform: rotate(135deg) translateX(-50%) translateX(20%);
+}
+.footer__scrollTop:before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 5px;
+  background-color: #fff;
+  position: absolute;
+  outline: none;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: rotate(45deg) translateX(-50%) translateX(20%);
+          transform: rotate(45deg) translateX(-50%) translateX(20%);
+}
+.footer__scrollTop--hidden {
+  bottom: -20%;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+/*===========  End of COMPONENTS  ===========*/
+/*=============================================
+=                    LAYOUT                   =
+=============================================*/
+/*---------------  HEADER  ---------------*/
 .header {
   min-height: 100%;
   background: url(../img/images/main_img.jpg) no-repeat center;
@@ -82,8 +373,7 @@ html, body {
   background-size: cover;
   text-align: center;
   position: relative;
-  /*----------  Navigation  ----------*/
-  /*----------  Scroll down button  ----------*/
+  /*--------  Navigation  --------*/
 }
 .header__nav {
   max-width: 800px;
@@ -109,10 +399,6 @@ html, body {
           justify-content: center;
   width: 800px;
   top: 36px;
-}
-.header__button {
-  /* Hamburger button - hidden */
-  display: none;
 }
 .header__list {
   display: -webkit-inline-box;
@@ -161,111 +447,8 @@ html, body {
 .header__link:hover {
   color: #64c29e;
 }
-.header__scrollContainer {
-  position: absolute;
-  bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.header__scrollBtn {
-  display: block;
-  width: 25px;
-  height: 45px;
-  border-radius: 40%;
-  outline: none;
-  border: 2px solid #282f35;
-  background-color: #fff;
-  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
-  overflow: hidden;
-  padding: 0;
-}
-.header__scrollBtn:after {
-  content: "";
-  display: block;
-  margin: auto;
-  width: 7px;
-  height: 15px;
-  border-radius: 40%;
-  background-color: #64c29e;
-  -webkit-transform: translateY(-60px);
-          transform: translateY(-60px);
-  -webkit-animation: scroll 1.5s linear infinite;
-          animation: scroll 1.5s linear infinite;
-}
-.header__scrollLink {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-@-webkit-keyframes scroll {
-  0% {
-    -webkit-transform: translateY(-60px);
-            transform: translateY(-60px);
-    opacity: 0.5;
-  }
-  25% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-    opacity: 0.75;
-  }
-  50% {
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-    opacity: 1;
-  }
-  75% {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-    opacity: 0.75;
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    opacity: 0;
-  }
-}
-@keyframes scroll {
-  0% {
-    -webkit-transform: translateY(-60px);
-            transform: translateY(-60px);
-    opacity: 0.5;
-  }
-  25% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-    opacity: 0.75;
-  }
-  50% {
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-    opacity: 1;
-  }
-  75% {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-    opacity: 0.75;
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    opacity: 0;
-  }
-}
-/*=====  End of HEADER  ======*/
-/*=============================================
-=              ABOUT and TWITTER              =
-=============================================*/
+
+/*----------  ABOUT AND TWITTER  ----------*/
 .about, .twitter {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -297,46 +480,7 @@ html, body {
   display: flex;
 }
 
-.twitter__content {
-  font-style: italic;
-  margin: auto;
-}
-.twitter__time {
-  font-weight: normal;
-  color: #848789;
-  text-transform: lowercase;
-}
-.twitter__slider {
-  width: 100%;
-}
-.twitter__slide {
-  display: none;
-}
-.twitter__slide--show {
-  display: block;
-}
-.twitter__buttonbox {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin-top: 30px;
-}
-.twitter__buttons {
-  margin: 0 5px;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #929292;
-  border-radius: 50%;
-  outline: none;
-}
-.twitter__buttons:hover, .twitter__buttons--selected {
-  background-color: #929292;
-}
-
-/*=====  End of ABOUT and TWITTER   ======*/
-/*=============================================
-=                    WORK                     =
-=============================================*/
+/*----------  WORK  ----------*/
 .work {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -475,10 +619,7 @@ html, body {
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
-/*=====  End of WORK  ======*/
-/*=============================================
-=                    SHOP                     =
-=============================================*/
+/*----------  SHOP SECTION  ----------*/
 .shop {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -577,10 +718,7 @@ html, body {
   transition: opacity 0.4s linear;
 }
 
-/*=====  End of SHOP  ======*/
-/*=============================================
-=                 ENTER SHOP                  =
-=============================================*/
+/*----------  ENTER SHOP SECTION  ----------*/
 .enter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -588,40 +726,9 @@ html, body {
   width: 100%;
   padding: 4%;
   background-color: #282f35;
-  /*----------  Enter shop button  ----------*/
-}
-.enter__btn {
-  margin: auto;
-  width: 250px;
-  background-color: transparent;
-  border: 1px solid #929292;
-  padding: 0;
-}
-.enter__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  letter-spacing: 1px;
-  color: #fff;
-  text-decoration: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 5% 10%;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-.enter__link:hover {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  background-color: #929292;
-  color: #282f35;
 }
 
-/*=====  End of ENTER SHOP  ======*/
-/*=============================================
-=                   MAILING                   =
-=============================================*/
+/*----------  MAILING SECTION  ----------*/
 .contact {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -661,6 +768,7 @@ html, body {
   font-size: 1.3em;
   font-weight: 300;
   margin-left: 5px;
+  cursor: pointer;
 }
 .contact__visuallyHidden {
   border: 0;
@@ -673,10 +781,7 @@ html, body {
   width: 1px;
 }
 
-/*=====  End of MAILING  ======*/
-/*=============================================
-=                   FOOTER                    =
-=============================================*/
+/*----------  FOOTER  ----------*/
 .footer {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -738,48 +843,11 @@ html, body {
 .footer__address--bold {
   font-weight: bold;
 }
-.footer__scrollTop {
-  position: fixed;
-  display: block;
-  bottom: 2%;
-  right: 2%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-  background-color: rgba(100, 194, 158, 0.75);
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  cursor: pointer;
-}
-.footer__scrollTop:after {
-  display: block;
-  content: "";
-  width: 20px;
-  height: 5px;
-  background-color: #fff;
-  position: absolute;
-  -webkit-transform: rotate(125deg) translateX(-7px) translateY(0px);
-          transform: rotate(125deg) translateX(-7px) translateY(0px);
-}
-.footer__scrollTop:before {
-  display: block;
-  content: "";
-  width: 20px;
-  height: 5px;
-  background-color: #fff;
-  position: absolute;
-  -webkit-transform: rotate(47deg) translateX(6px) translateY(-14.5px);
-          transform: rotate(47deg) translateX(6px) translateY(-14.5px);
-}
-.footer__scrollTop--hidden {
-  bottom: -20%;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-}
 
-/*=====  End of FOOTER  ======*/
+/*=============  End of LAYOUT  =============*/
+/*=============================================
+=                MEDIA QUERIES                =
+=============================================*/
 /*=============================================
 =                MEDIA QUERIES                =
 =============================================*/
@@ -795,7 +863,6 @@ html, body {
     overflow: hidden;
     background: url(../img/images/background-smaller.jpg) no-repeat center;
     background-size: cover;
-    /*----------  HAMBURGER BUTTON ----------*/
     /*----------  Navigation List ----------*/
   }
   .header__nav {
@@ -822,76 +889,6 @@ html, body {
   }
   .header__button {
     display: block;
-    position: relative;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -ms-flex-item-align: center;
-        align-self: center;
-    width: 40px;
-    height: 30px;
-    padding: 0;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-top: 5px solid #64c29e;
-    -webkit-transition: -webkit-transform 0.1s linear;
-    transition: -webkit-transform 0.1s linear;
-    transition: transform 0.1s linear;
-    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-    overflow: visible;
-  }
-  .header__button:before {
-    content: "";
-    display: block;
-    width: 100%;
-    border-top: 5px solid #64c29e;
-    position: absolute;
-    -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
-    -webkit-transition: -webkit-transform 0.1s linear;
-    transition: -webkit-transform 0.1s linear;
-    transition: transform 0.1s linear;
-    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-  }
-  .header__button:after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-top: 5px solid #64c29e;
-    position: absolute;
-    -webkit-transform: translateY(12px);
-            transform: translateY(12px);
-    -webkit-transition: -webkit-transform 0.1s linear;
-    transition: -webkit-transform 0.1s linear;
-    transition: transform 0.1s linear;
-    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-  }
-  .header__button--used {
-    -webkit-transition: -webkit-transform 0.1s linear;
-    transition: -webkit-transform 0.1s linear;
-    transition: transform 0.1s linear;
-    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-    width: 20px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-  .header__button--used:before {
-    -webkit-transition: -webkit-transform 0.1s linear;
-    transition: -webkit-transform 0.1s linear;
-    transition: transform 0.1s linear;
-    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-    -webkit-transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
-            transform: rotate(-45deg) translateY(-13.5px) translateX(-12px);
-    width: 200%;
-  }
-  .header__button--used:after {
-    -webkit-transition: -webkit-transform 0.1s linear;
-    transition: -webkit-transform 0.1s linear;
-    transition: transform 0.1s linear;
-    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
-    -webkit-transform: rotate(-90deg) translateY(8.5px) translateX(10px);
-            transform: rotate(-90deg) translateY(8.5px) translateX(10px);
   }
   .header__list {
     display: -webkit-box;
@@ -1006,3 +1003,4 @@ html, body {
   }
 }
 /*=====  End of MEDIA QUERIES  ======*/
+/*==========  End of MEDIA QUERIES  =========*/

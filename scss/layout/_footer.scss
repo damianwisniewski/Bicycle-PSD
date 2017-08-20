@@ -1,0 +1,48 @@
+/*----------  FOOTER  ----------*/
+.footer {
+    @include flexbox-inline;
+    width: 100%;
+    padding: 5% 10%;
+    flex-wrap: wrap-reverse;
+
+    &__col {
+        display: flex;
+        flex: 1 1 50px;
+        flex-direction: row;
+        align-self: center;
+        justify-content: center;
+        
+        &--start {
+            flex-direction: column;
+        }
+
+        &--end {
+            justify-content: flex-end;
+        }
+
+        &--social {
+            min-width: 300px;
+            width: 100%;
+        }
+    }
+
+    &__item {
+        margin: 7px;
+        font-size: $small-font;
+        color: $content-font-color;
+        font-style: italic;
+    }
+
+    &__address { 
+        font-size: $small-font;
+        color: $content-font-color;
+
+        &--bold {
+            font-weight: bold;
+        }
+    }
+    
+
+    /*----------  Scroll top Button  ----------*/
+    
+}
