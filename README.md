@@ -3,7 +3,7 @@ PSD to HTML
 
 ### USED:
 * HTML
-* CSS (Flexbox layout)
+* SCSS (Flexbox layout)
 * BEM Methodology
 * JavaScript
 
