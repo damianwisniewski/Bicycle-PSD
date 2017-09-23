@@ -5,6 +5,6 @@ PSD to HTML
 
 **USED:**
 + HTML5
-+ SCSS (Flexbox layout)
++ CSS3 / SCSS (Flexbox layout)
 + BEM Methodology
 + JavaScript
