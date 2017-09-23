@@ -1,9 +1,10 @@
 # Bicycle-PSD
 PSD to HTML
 
-### USED:
-* HTML
-* SCSS (Flexbox layout)
-* BEM Methodology
-* JavaScript
+***Practice new - SCSS and BEM methodology***
 
+**USED:**
++ HTML5
++ SCSS (Flexbox layout)
++ BEM Methodology
++ JavaScript
